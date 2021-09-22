@@ -1,0 +1,10 @@
+announcement: Our next meeting will be on Tuesday, September 27th from 7-9pm!
+
+---
+
+title: 9/21/21 meeting
+description: During our regular meeting, we folded the Youtube, Zoom, and Snapchat logos!
+image-folder: meeting-9-21-21
+
+=== 
+// Older or hidden announcements go here

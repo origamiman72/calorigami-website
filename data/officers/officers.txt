@@ -1,0 +1,40 @@
+name: Abhik Ahuja
+position: Co-president
+year: 3rd
+major: Computer Science & Mathematics
+other: I like taking pictures of stuff
+
+---
+
+name: Kelly
+position: Co-president
+year: 3rd
+major: MCB
+other: I play 4 instruments
+
+---
+
+name: Chris
+position: Treasurer 
+year: 4th+
+major: Mathematics
+other: Red panda enthusiast
+
+---
+
+name: Ellen
+position: 
+year: 3rd
+major: TODO
+other: TODO
+
+---
+
+name: Oliver
+position: 
+year: 3rd
+major: TODO
+other: TODO
+
+===
+// Anything below here is old officers.

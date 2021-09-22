@@ -8,11 +8,28 @@
 
 <div><div class="wsite-multicol"><div style='padding-right:1.2%'><div class='wsite-multicol-table-wrap' style='margin:0 -5px'>
 
-<table class='wsite-multicol-table'>
+<table class='wsite-multicol-table' style='width:100%;'>
 <tbody class='wsite-multicol-tbody'>
-<tr class='wsite-multicol-tr'>
-<td class='wsite-multicol-col' style='width:49.5%;padding:0 5px'>
+<!-- <td class='wsite-multicol-col' style='width:49.5%;padding:0 5px'> -->
 
+{% for officer in officer_list %}
+  {% if loop.index % 2 == 1 %}
+  <tr class='wsite-multicol-tr'>
+  {% endif %}
+  <td class='wsite-multicol-col' style='width:49.5%;padding:0 5px'>
+    <h2 style="text-align:left;">{{ officer.name }}</h2>
+    <!-- <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span> -->
+    <div class="paragraph" style="text-align:left;display:block;">
+    <b>Position:</b> {{ officer.position }}<br />
+    <b>Year:</b> {{ officer.year }}<br />
+    <b>Major:</b> {{ officer.major }}<br />
+    <b>Other:</b> {{ officer.other }}<br /></div>
+    <hr style="clear:both;visibility:hidden;width:100%;"></hr>
+  </td>
+  {% if loop.index % 2 == 0 %}
+  <tr class='wsite-multicol-tr'>
+  {% endif %}
+{% endfor %}
 <!-- <h2 style="text-align:left;">Daniel Ma</h2>
 <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span>
 <div class="paragraph" style="text-align:left;display:block;">
@@ -49,17 +66,17 @@
 <b>Other:</b> I'm also a part of CalSol</div>
 <hr style="clear:both;visibility:hidden;width:100%;"></hr> -->
 
-<h2 style="text-align:left;">Melissa</h2>
-<!-- <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span> -->
+<!-- <h2 style="text-align:left;">Melissa</h2>
+<span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span>
 <div class="paragraph" style="text-align:left;display:block;">
 <b>Position:</b> President<br />
 <b>Year:</b> 3rd<br />
 <b>Major:</b> Molecular Environmental Biology<br />
 <b>Other:</b> I am pre-vet and love animals!<br /></div>
-<hr style="clear:both;visibility:hidden;width:100%;"></hr>
+<hr style="clear:both;visibility:hidden;width:100%;"></hr> -->
 
-<h2 style="text-align:left;">Chris</h2>
-<!-- <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span> -->
+<!-- <h2 style="text-align:left;">Chris</h2>
+<span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span>
 <div class="paragraph" style="text-align:left;display:block;">
 <b>Position:</b> Vice President<br />
 <b>Year:</b> 3rd<br />
@@ -68,7 +85,7 @@
 <hr style="clear:both;visibility:hidden;width:100%;"></hr>
 
 <h2 style="text-align:left;">Isaac</h2>
-<!-- <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span> -->
+<span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span>
 <div class="paragraph" style="text-align:left;display:block;">
 <b>Position:</b> Secretary<br />
 <b>Year:</b> 4th<br />
@@ -77,52 +94,52 @@
 <hr style="clear:both;visibility:hidden;width:100%;"></hr>
 
 <h2 style="text-align:left;">Gracie</h2>
-<!-- <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span> -->
+<span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span>
 <div class="paragraph" style="text-align:left;display:block;">
 <b>Position:</b> Webmaster<br />
 <b>Year:</b> 2nd<br />
 <b>Major:</b> Molecular and Cell Biology<br />
 <b>Other:</b> Loves classical music<br /></div>
-<hr style="clear:both;visibility:hidden;width:100%;"></hr>
+<hr style="clear:both;visibility:hidden;width:100%;"></hr> -->
 
-</td>
-<td class='wsite-multicol-col' style='width:49.5%;padding:0 5px'>
+<!-- </td> -->
+<!-- <td class='wsite-multicol-col' style='width:49.5%;padding:0 5px'> -->
 
-  <h2 style="text-align:left;">Abhik</h2>
-  <!-- <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span> -->
+  <!-- <h2 style="text-align:left;">Abhik</h2>
+  <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span>
   <div class="paragraph" style="text-align:left;display:block;">
   <b>Position:</b> Publicity<br />
   <b>Year:</b> 1st<br />
   <b>Major:</b> CS and Mathematics<br />
   <b>Other:</b> I like taking photos of stuff<br /></div>
-  <hr style="clear:both;visibility:hidden;width:100%;"></hr>
+  <hr style="clear:both;visibility:hidden;width:100%;"></hr> -->
 
-  <h2 style="text-align:left;">Anna</h2>
-  <!-- <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span> -->
+  <!-- <h2 style="text-align:left;">Anna</h2> -->
+  <!-- <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span>
   <div class="paragraph" style="text-align:left;display:block;">
   <b>Position:</b> Social<br />
   <b>Year:</b> 1st<br />
   <b>Major:</b> Materials Science and Engineering<br />
   <b>Other:</b> Vegetal and tea (the drinking kind) aficionado<br /></div>
-  <hr style="clear:both;visibility:hidden;width:100%;"></hr>
+  <hr style="clear:both;visibility:hidden;width:100%;"></hr> -->
 
-  <h2 style="text-align:left;">Theodor</h2>
-  <!-- <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span> -->
+  <!-- <h2 style="text-align:left;">Theodor</h2>
+  <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span>
   <div class="paragraph" style="text-align:left;display:block;">
   <b>Position:</b> Historian<br />
   <b>Year:</b> 1st<br />
   <b>Major:</b> Engineering Undeclared<br />
   <b>Other:</b> I like dragons<br /></div>
-  <hr style="clear:both;visibility:hidden;width:100%;"></hr>
+  <hr style="clear:both;visibility:hidden;width:100%;"></hr> -->
 
-  <h2 style="text-align:left;">Kelly</h2>
-  <!-- <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span> -->
+  <!-- <h2 style="text-align:left;">Kelly</h2>
+  <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px;'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/daniel.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span>
   <div class="paragraph" style="text-align:left;display:block;">
   <b>Position:</b> EBOC<br />
   <b>Year:</b> 1st<br />
   <b>Major:</b> MCB<br />
   <b>Other:</b> I play 4 instruments<br /></div>
-  <hr style="clear:both;visibility:hidden;width:100%;"></hr>
+  <hr style="clear:both;visibility:hidden;width:100%;"></hr> -->
 
 <!-- <h2 style="text-align:left;">Jane Wu</h2>
 <span class='imgPusher' style='float:left;height:0px'></span><span style='position:relative;float:left;z-index:10;;clear:left;margin-top:0px;*margin-top:0px'><a><img class="wsite-image galleryImageBorder" src="{{url_for('static', filename='img/jane2.jpg')}}"  style="margin-top: 5px; margin-bottom: 10px; margin-left: 0px; margin-right: 10px; border-width:1px;padding:3px;" alt="Picture" /></a><div style="display: block; font-size: 90%; margin-top: -10px; margin-bottom: 10px; text-align: center;"></div></span>
@@ -160,7 +177,7 @@
 <b>Other:</b> I also enjoy doing technical theater work, specifically the lighting aspect of it. <br /></div>
 <hr style="clear:both;visibility:hidden;width:100%;"></hr> -->
 
-</td>
+<!-- </td> -->
 </tr>
 </tbody>
 </table>

@@ -14,8 +14,24 @@
 <!--new post -->
 
 <div>
-    We will be having a social with virtual games on Tuesday, September 15 from 8-9 pm!
+    {{ announcment }}
+    <!-- We will be having a social with virtual games on Tuesday, September 15 from 8-9 pm! -->
 </div>
+
+{% for post in post_list %}
+<div>
+    <h1 style="text-align:left; font-size:2em"><strong><em>{{ post.title }}</em></strong></h1>
+    {{ post.description }}
+    <br /><br />
+
+    {% for img in post.images %}
+        <a href={{ url_for('static', filename=img) }} rel='lightbox' onclick='if (!lightboxLoaded) return false'>
+            <img style="width:250px;" src={{ url_for('static', filename=img)}}alt="Picture" style="width:auto;max-width:100%" />
+        </a>
+    <br /><br />
+    {% endfor %}
+</div>
+{% endfor %}
 
 <div>
     <h1 style="text-align:left; font-size:2em"><strong><em>11/12/19 Meeting</em></strong></h1>
