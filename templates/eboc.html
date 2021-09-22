@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}EBOC{% endblock %}
+
+{% block content %}
+
+<h2 style="text-align:left;">East Bay Origami Convention 2013</h2>
+
+<!-- EBOC Flyer to the right -->
+<div style='float:right;'><a href="{{url_for('static', filename='img/EBOC13-front.jpg')}}" ><img src="{{url_for('static', filename='img/EBOC13-front_420px.jpg')}}"  style='height: 420px; width: 280px; margin-left: 20px;'></a></div>
+
+
+The East Bay Origami Convention is an origami convention held at Barrows Hall in UC Berkeley. &nbsp;In contrast to PCOC (Pacific Coast Origami Convention), our convention is on a smaller scale, but will happen every year. &nbsp;Also, to be able to accommodate many origami enthusiasts in the area, admission costs are from $10-20. &nbsp;We are currently doing our best to create an amazing event for the origami community.<br /><br />
+
+<div><br />NOTE: Early Registration is now closed, but walk-ins are welcome!<br /><br /></div>
+<!--<br /><div style='text-align: center; margin-bottom: 30px;'><a href='registration.html' style='display: block; border-radius: 20px; font-size: 30px; background: #8b2234; width: 200px; padding: 10px; color: #fff; margin-top: 10px;'>Register Here</a></div>-->
+
+
+<div style="float: left; margin-right: 20px; width: 240px;"><strong>SATURDAY, NOVEMBER 16th 2013 10am-6pm (Dinner afterwards)</strong><br />-Registration starts at 9am&nbsp;<br />-Main Convention Day!&nbsp;<br />-Exhibition<br />-Lectures, Model Teachings<br />-Informal Dinner $5<br />-Late Night Folding (tentative!)<br /><br />GENERAL ADMISSION: $17*<br />Early Registration (Register by 11/2): $15*<br />CAL STUDENTS: $10*<br />Under age 6: Free!*<br />(Sunday is free for Saturday attendees!)<br /><font size="1">*Dinner not included in price</font><br /><br /></div>
+
+
+<div style="float: left; width: 240px;"><strong>SUNDAY, NOVEMBER 17th 2013 11am-4pm (times may change)</strong><br />-Lecture, Emphasis on Design, Technique, Q&amp;A, etc.&nbsp;<br /><br />$10 for Sunday only&nbsp;<br /><br />
+</div>
+
+<div style='clear:both;'></div>
+
+<div style='width: 620px; float: left'>
+	
+	<b><font size="3">VOLUNTEERING</font></b><br>
+	We need volunteers to help keep the convention running smoothly!  Volunteers get to attend the convention free of charge on the days that they volunteer. <a href="volunteering.html" >&nbsp;Volunteer Here</a>&nbsp;<br /><br />
+	<div>
+		<div style='float: left; padding-right: 20px;'><b><font size="3">SUBMITTING A MODEL (for display)</font></b><br />
+		If you're interested in submitting a model, models do not have to be original. As long as proper documentation is provided, such as the <b>name and author of the model</b>, and the <b>folder's name</b>, you may submit any model you like. <br /><br>It does <u>not</u> have to be part of the Theme. <br /><br /></div>
+		<div class="paragraph" style="float:right;width: 140px; border: 1px solid #ccc; padding: 10px;"><u style="">Sample Model Name</u><br />Folded By: John Doe<br />Designed By: Jane Doe</div>
+	</div>
+	<strong><font size="3">CONVENTION BOOK</font></strong><br />We are going to have a&nbsp;<strong style="">Convention Book&nbsp;</strong>this year! We will be accepting any diagrams, crease patterns, or origami related articles that you would like to have in the book. Please send your submissions to <b>eboc2013@gmail.com</b> with the subject line "Convention Book" (preferred format: pdf). The deadline will be 11/2. If you would like to order a book but are not attending the convention, email us. &nbsp;<br /><br />
+	<strong><font size="3">TEACHING</font></strong><br />Would you be interested in teaching a class? &nbsp;If so, fill out the form on our<a href="volunteer-teaching.html" style="">&nbsp;Volunteer Teaching</a>&nbsp;page!&nbsp;<br /><br />
+	<strong><font size="3">TRAVEL</font></strong><br />Coming from out of town? Need info on travel and hotels?&nbsp;<a title="" href="travel-and-hotels.html" style="">Click here</a><br /><br />
+	<strong><font size="3">SPONSORSHIP</font></strong><br />We are looking for sponsors for our organization, and in return, we will add your logo and information to our advertisement materials. &nbsp;We will accept both money and material donations. &nbsp;Please see "Donate" for more information. &nbsp;<br /><br />If you have any questions, please email <font color="#3333ff"><strong><u>EBOC2013@gmail.com&nbsp;<br /></u></strong></font><br />
+	
+	<!-- end volunteering to sponsorship div --></div>
+	
+<div style="float: right;">
+<img src="{{url_for('static', filename='img/barrows.jpg')}}"  alt="Picture" style="width:280px" />
+</div>
+
+<div style="clear:both; "></div>
+
+{% endblock %}

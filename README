@@ -1,0 +1,21 @@
+A couple important things:
+
+I. This Flask environment is set up so that any page in the templates directory
+   "/templates/abc.html" can be reached via either 
+      "https://calorigami.berkeley.edu/abc"
+   or
+      "https://calorigami.berkeley.edu/abc.html".
+
+   The only exception is layout.html, which only contains the navbar, header
+   image, and footer.
+
+II. See /templates/TEMPLATE.html for the general structure of a page.
+
+III. The image paths have changed from old code to flask code: 
+  a. /img/abc.png -> /static/img/abc.png
+  b. /uploads/6/5/4/7/6547949/def.png -> /static/uploads/def.png
+     ('cause /6/5/4/7/6547949 were just unnecessarily nested folders.)
+
+
+
+Copyright Cal Origami 2016
