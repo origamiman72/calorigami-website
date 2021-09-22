@@ -1,6 +1,16 @@
-[calorigami.berkeley.edu]
+# calorigami.berkeley.edu
 
-Background:
+## Update:
+The website is currently being updated to use the Flask templating system more
+extensively to make it easier to edit by future webmasters. New information
+should be placed in `/data/` and it should be parsed and updated accordingly
+on the website.
+
+### Pages currently using new templates:
+* `templates/officers.html`
+* `templates/index.html` (in progress)
+
+## Background:
 The Cal Origami website used to be hosted on weebly [calorigami.weebly.com/] and
 when the staff decided to move it to the current site [calorigami.berkeley.edu]
 they just saved the html from each weebly page. This resulted in a website with
@@ -56,4 +66,4 @@ V. If you make some changes & the site didn't update, try this command over ssh:
     $ touch ~/public_html/run.fcgi
    Also hard refresh the website using ctrl+F5 to bypass the cache.
 
-Copyright Cal Origami 2016
+Copyright Cal Origami 2021
