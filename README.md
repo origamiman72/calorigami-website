@@ -10,6 +10,82 @@ on the website.
 * `templates/officers.html`
 * `templates/index.html` (in progress)
 
+## Quick Start Guide
+You must have installed:
+* python3
+* Flask
+* git
+
+First, you must clone the repository:
+```bash
+git clone https://github.com/origamiman72/calorigami-website.git
+```
+To run the website server, run
+```bash
+python3 server.py
+```
+and navigate to `http://127.0.0.1:5000` in your browser to view the site.
+
+To update the website, navigate to the relevant folder in `/data/` and update
+using this format:\\
+```
+key1: value1
+key2: value2
+key3: value3
+// etc
+
+---
+// The three dashes separate content, e.g. separate posts, officers, etc.
+
+key1: value1
+// etc
+
+===
+// Anything below the equals signs is ignored, can use for older information
+```
+
+As an example, for an officer, `/data/officers/officers.txt` should look like
+```
+name: John Doe
+position: President
+year: 4th
+major: EECS
+other: Likes python (the snake)
+
+---
+
+name: John Deere
+//etc
+```
+
+### Special pages
+The posts page, located in `/data/posts/posts.txt` will have an announcements
+key/value pair on top. This should not appear in the rest of the page,
+e.g.
+
+```
+announcement: Our next meeting will be held on top of the Campanile on January 1st!
+
+---
+
+title: 1/1/01 Meeting
+//etc
+```
+To add images to a post in announcements, list the file names of the images as held in
+`/static/img/` separated by commas. e.g., for images `/static/img/img1.jpg` and
+`/static/img/img2.jpg`, `/data/posts/posts.txt` should look like
+
+```
+---
+
+title: 1/1/01 Meeting
+description: We folded paper!
+image-list: img1.jpg, img2.jpg
+
+---
+```
+
+
 ## Background:
 The Cal Origami website used to be hosted on weebly [calorigami.weebly.com/] and
 when the staff decided to move it to the current site [calorigami.berkeley.edu]
