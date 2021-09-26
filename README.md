@@ -8,7 +8,7 @@ on the website.
 
 ### Pages currently using new templates:
 * `templates/officers.html`
-* `templates/index.html` (in progress)
+* `templates/index.html`
 
 ## Quick Start Guide
 You must have installed:
