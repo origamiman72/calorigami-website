@@ -6,6 +6,7 @@ app = Flask(__name__)
 @app.route('/index')
 @app.route('/index.html')
 def index_route():
+    print('posts', announcement)
     return render_template('/index.html', announcement=announcement, post_list=posts)
 
 @app.route('/<target>')
@@ -40,7 +41,8 @@ def process_index(index_data):
     posts = index_data[1:]
     for post in posts:
         post['image-folder'] = "".join(post['image-folder'].split())
-        post['images'] = ['img/' + post['image-folder'] + '/' + img for img in os.listdir('./templates/static/img/' + post['image-folder'])]
+        post['images'] = []
+        post['images'] = ['img/' + post['image-folder'] + '/' + img for img in os.listdir('./static/img/' + post['image-folder'])]
         print(post['images'])
 
 if __name__ == '__main__':

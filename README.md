@@ -71,16 +71,17 @@ announcement: Our next meeting will be held on top of the Campanile on January 1
 title: 1/1/01 Meeting
 //etc
 ```
-To add images to a post in announcements, list the file names of the images as held in
-`/static/img/` separated by commas. e.g., for images `/static/img/img1.jpg` and
-`/static/img/img2.jpg`, `/data/posts/posts.txt` should look like
+To add images to a post in announcements, create a folder under `/static/img` and place your images within it. Then, place the folder name under the key `image-folder`. If there are no images, write `no-images` instead.
+
+e.g. for `/static/img/meeting-1-1-01/<images>`, `/data/posts/posts.txt` should look like
 
 ```
 ---
 
 title: 1/1/01 Meeting
 description: We folded paper!
-image-list: img1.jpg, img2.jpg
+image-folder: meeting-1-1-01
+// for no images, write image-folder: no-images
 
 ---
 ```
