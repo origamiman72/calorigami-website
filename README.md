@@ -1,4 +1,4 @@
-# calorigami.berkeley.edu
+# [calorigami.berkeley.edu](https://calorigami.berkeley.edu)
 
 ## Update:
 The website is currently being updated to use the Flask templating system more
