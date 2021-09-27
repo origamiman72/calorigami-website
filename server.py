@@ -6,8 +6,7 @@ app = Flask(__name__)
 @app.route('/index')
 @app.route('/index.html')
 def index_route():
-    print('posts', announcement)
-    return render_template('/index.html', announcement=announcement, post_list=posts)
+    return render_template('/index.html', announcment_text=announcement, post_list=posts)
 
 @app.route('/<target>')
 @app.route('/<target>.html')
