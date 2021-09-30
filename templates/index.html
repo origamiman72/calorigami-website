@@ -25,7 +25,7 @@
 
     {% for img in post.images %}
         <a href={{ url_for('static', filename=img) }} rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-            <img style="width:250px;" src={{ url_for('static', filename=img)}} alt="Picture" style="width:auto;max-width:100%" />
+            <img style="height:225px;" src={{ url_for('static', filename=img)}} alt="Picture" />
         </a>
     {% endfor %}
     <br /><br />

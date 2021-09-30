@@ -1,8 +1,13 @@
-announcement: Our next meeting will be on Tuesday, September 27th from 7-9pm!
+announcement: Our next meeting will be on Tuesday, October 5th from 7-9pm in Dwinelle 205!
+
+---
+title: 9/27/21 Meeting
+description: This week, we folded giant modulars using giant paper!
+image-folder: meeting-9-27-21
 
 ---
 
-title: 9/21/21 meeting
+title: 9/21/21 Meeting
 description: During our regular meeting, we folded the Youtube, Zoom, and Snapchat logos!
 image-folder: meeting-9-21-21
 

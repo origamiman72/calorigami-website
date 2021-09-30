@@ -10,7 +10,7 @@ name: Kelly
 position: Co-president
 year: 3rd
 major: MCB
-other: I play 4 instruments
+other: I like tater tots
 
 ---
 
@@ -23,18 +23,18 @@ other: Red panda enthusiast
 ---
 
 name: Ellen
-position: 
+position: Publicity Officer
 year: 3rd
-major: TODO
-other: TODO
+major: Data Science
+other: I like to clean
 
 ---
 
 name: Oliver
-position: 
+position: Officer
 year: 3rd
-major: TODO
-other: TODO
+major: Computer Science
+other: Fan of Math Rock
 
 ===
 // Anything below here is old officers.
