@@ -6,6 +6,7 @@ app = Flask(__name__)
 @app.route('/index')
 @app.route('/index.html')
 def index_route():
+    process_index(read_data("./data/posts/posts.txt"))
     return render_template('/index.html', announcment_text=announcement, post_list=posts)
 
 @app.route('/<target>')
@@ -19,6 +20,7 @@ def nav_target_route(target):
 @app.route('/officers')
 @app.route('/officers.html')
 def officer_page():
+    officers = read_data("./data/officers/officers.txt")
     return render_template('/officers.html', officer_list = officers)
 
 def read_data(filepath):
@@ -45,8 +47,4 @@ def process_index(index_data):
         print(post['images'])
 
 if __name__ == '__main__':
-    global officers
-    global index_data
-    officers = read_data("./data/officers/officers.txt")
-    process_index(read_data("./data/posts/posts.txt"))
     app.run()
