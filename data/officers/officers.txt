@@ -31,7 +31,7 @@ other: I like to clean
 ---
 
 name: Oliver
-position: Officer
+position: Teaching Officer
 year: 3rd
 major: Computer Science
 other: Fan of Math Rock
@@ -39,10 +39,10 @@ other: Fan of Math Rock
 ---
 
 name: Tina
-position: Social Officer
+position: Secretary
 year: 1st
 major: Pre-Haas
-other: 
+other: I like solving sudoku puzzles
 
 ===
 // Anything below here is old officers.
