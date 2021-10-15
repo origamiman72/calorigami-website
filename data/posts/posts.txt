@@ -1,9 +1,22 @@
-announcement: Our next meeting will be on Tuesday, October 5th from 7-9pm in Dwinelle 205!
+announcement: Our next meeting will be on Tuesday, October 19th, from 7-9pm on the 1st floor of Moffitt!
 
 ---
-title: 9/27/21 Meeting
+
+title: 10/12/21 Meeting
+description: This week we folded Squid Game cards designed by our officer, Kelly Tan!
+image-folder: meeting-10-12-21
+
+---
+
+title: 10/5/21 Meeting
+description: We folded Halloween Cats by Taichiro Hasegawa as well as Jellyfish designed by our officer Oliver Jiang!
+image-folder: meeting-10-5-21
+
+---
+
+title: 9/28/21 Meeting
 description: This week, we folded giant modulars using giant paper!
-image-folder: meeting-9-27-21
+image-folder: meeting-9-28-21
 
 ---
 

@@ -43,7 +43,7 @@ def process_index(index_data):
     for post in posts:
         post['image-folder'] = "".join(post['image-folder'].split())
         post['images'] = []
-        post['images'] = ['img/' + post['image-folder'] + '/' + img for img in os.listdir('./static/img/' + post['image-folder'])]
+        post['images'] = ['img/' + post['image-folder'] + '/' + img for img in sorted(os.listdir('./static/img/' + post['image-folder'])) if img != '.DS_Store']
         print(post['images'])
 
 if __name__ == '__main__':

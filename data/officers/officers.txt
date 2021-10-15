@@ -1,4 +1,4 @@
-name: Abhik Ahuja
+name: Abhik
 position: Co-president
 year: 3rd
 major: Computer Science & Mathematics
@@ -35,6 +35,14 @@ position: Officer
 year: 3rd
 major: Computer Science
 other: Fan of Math Rock
+
+---
+
+name: Tina
+position: Social Officer
+year: 1st
+major: Pre-Haas
+other: 
 
 ===
 // Anything below here is old officers.
