@@ -6,26 +6,20 @@
     <meta name='og:description' content='The origami club at UC Berkeley.'/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main_style.css') }}">
+
+    <!-- Bootstrap -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='lib/bootstrap/css/bootstrap.min.css') }}">
+    <script src="{{ url_for('static',filename='lib/bootstrap/js/bootstrap.min.js') }}"></script>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
 </head>
 
 <body>
 <div id="wrapper">
     <div id="container">
-        <div id="navigation">
-            <ul>
-            <li><a href='index'>Home</a></li>
-            <li><a href='calendar'>Calendar</a></li>
-            <li><a href='events'>Events</a></li>
-            <li><a href='projects'>Projects</a></li>
-            <li><a href='officers'>Officers</a></li>
-            <li><a href='donate'>Donate</a></li>
-            <li><a href='contact'>Contact</a></li>
-            <li><a href='about-us'>About Us</a></li>
-            </ul>
-        </div>
-
-    <div id="header"></div>
+      <header>
+        {% include 'navbar.html' %}
+      </header>
 
 
 
@@ -52,4 +46,17 @@
 
 
 </body>
+<script>
+  $(document).ready(function() {
+      $( ".mr-auto .nav-item" ).bind( "click", function(event) {
+          event.preventDefault();
+          var clickedItem = $( this );
+          $( ".mr-auto .nav-item" ).each( function() {
+              $( this ).removeClass( "active" );
+          });
+          clickedItem.addClass( "active" );
+      });
+  });
+  </script>
+
 </html>

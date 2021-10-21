@@ -9,6 +9,21 @@ def index_route():
     process_index(read_data("./data/posts/posts.txt"))
     return render_template('/index.html', announcment_text=announcement, post_list=posts)
 
+# @app.route('/events')
+# @app.route('/events.html')
+# def events():
+#     return render_template('events.html')
+
+# @app.route('/donate')
+# @app.route('/donate.html')
+# def donate():
+#     return render_template('donate.html')
+
+# @app.route('/contact')
+# @app.route('/contact.html')
+# def events():
+#     return render_template('contact.html')
+
 @app.route('/<target>')
 @app.route('/<target>.html')
 def nav_target_route(target):
@@ -47,4 +62,4 @@ def process_index(index_data):
         print(post['images'])
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
