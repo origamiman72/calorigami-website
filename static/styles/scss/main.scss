@@ -1,0 +1,65 @@
+/* Colors */
+$calo-accent: #409d8d;
+$navbar-light-active-color: white;
+
+/* Fonts */
+@font-face {
+    font-family: 'YanoneKaffeesatz-VariableFont_wght';
+    src: url('fonts/YanoneKaffeesatz-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+$nav-font: 'YanoneKaffeesatz-VariableFont_wght';
+
+header {
+    background-color: white;
+}
+
+.navbar-light {
+    .navbar-brand {
+        color: $calo-accent;
+        font-family: $nav-font;
+        padding-top: 12px;
+        font-size: 24px;
+    }
+}
+
+nav {
+    width: 100vw;
+
+    .container-fluid {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+
+        .navbar-collapse {
+            flex-grow: 0;
+        }
+    }
+
+    #navbar-logo {
+        height: 40px;
+    }
+
+    .nav-item {
+        border-radius: 5px;
+        margin: 0 3px;
+        font-family: $nav-font;
+        font-size: 20px;
+
+        &.active {
+            background-color: $calo-accent;
+            .nav-link {
+                color: $navbar-light-active-color;
+            }
+
+            &:hover {
+                .nav-link {
+                    color: $navbar-light-active-color;
+                }
+            }
+        }
+    }
+}

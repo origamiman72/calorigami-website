@@ -1,5 +1,58 @@
 /* Colors */
-.active {
-  color: blue !important;
+/* Fonts */
+@font-face {
+  font-family: 'YanoneKaffeesatz-VariableFont_wght';
+  src: url("fonts/YanoneKaffeesatz-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+header {
+  background-color: white;
+}
+
+.navbar-light .navbar-brand {
+  color: #409d8d;
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  padding-top: 12px;
+  font-size: 24px;
+}
+
+nav {
+  width: 100vw;
+}
+
+nav .container-fluid {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+nav .container-fluid .navbar-collapse {
+  flex-grow: 0;
+}
+
+nav #navbar-logo {
+  height: 40px;
+}
+
+nav .nav-item {
+  border-radius: 5px;
+  margin: 0 3px;
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  font-size: 20px;
+}
+
+nav .nav-item.active {
+  background-color: #409d8d;
+}
+
+nav .nav-item.active .nav-link {
+  color: white;
+}
+
+nav .nav-item.active:hover .nav-link {
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */

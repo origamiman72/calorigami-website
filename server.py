@@ -7,36 +7,21 @@ app = Flask(__name__)
 @app.route('/index.html')
 def index_route():
     process_index(read_data("./data/posts/posts.txt"))
-    return render_template('/index.html', announcment_text=announcement, post_list=posts)
-
-# @app.route('/events')
-# @app.route('/events.html')
-# def events():
-#     return render_template('events.html')
-
-# @app.route('/donate')
-# @app.route('/donate.html')
-# def donate():
-#     return render_template('donate.html')
-
-# @app.route('/contact')
-# @app.route('/contact.html')
-# def events():
-#     return render_template('contact.html')
+    return render_template('public/index.html', announcment_text=announcement, post_list=posts)
 
 @app.route('/<target>')
 @app.route('/<target>.html')
 def nav_target_route(target):
     implemented_elsewhere=['officers', 'index']
     if target not in implemented_elsewhere:
-        return render_template(target+'.html')
+        return render_template('public/' + target+'.html')
     return None
 
 @app.route('/officers')
 @app.route('/officers.html')
 def officer_page():
     officers = read_data("./data/officers/officers.txt")
-    return render_template('/officers.html', officer_list = officers)
+    return render_template('public/officers.html', officer_list = officers)
 
 def read_data(filepath):
     f = open(filepath, "r")
