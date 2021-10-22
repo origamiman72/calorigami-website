@@ -88,6 +88,11 @@ nav .nav-item.active:hover .nav-link {
 #footer {
   background-color: #409d8d;
   color: white;
+  border-top: #00858f solid 1px;
+}
+
+#footer a {
+  color: #ffcc9d;
 }
 
 .banner {
@@ -137,6 +142,10 @@ nav .nav-item.active:hover .nav-link {
   min-height: 300px;
   overflow: hidden;
   object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .grid .announcement {

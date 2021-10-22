@@ -54,6 +54,10 @@ $banner-height: 350px;
                 min-height: 300px;
                 overflow: hidden;
                 object-fit:cover;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
             }
         }
     }
