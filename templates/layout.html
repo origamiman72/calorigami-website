@@ -9,7 +9,7 @@
 
     <!-- Bootstrap -->
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='lib/bootstrap/css/bootstrap.min.css') }}">
-    <script src="{{ url_for('static',filename='lib/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
 </head>
@@ -22,11 +22,9 @@
       </header>
 
 
-
         <div id="content">
             {% block content %}{% endblock %}
         </div>
-
 
 
         <div id="footer">

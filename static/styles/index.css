@@ -80,4 +80,63 @@ nav .nav-item.active .nav-link {
 nav .nav-item.active:hover .nav-link {
   color: white;
 }
-/*# sourceMappingURL=main.css.map */
+
+.banner {
+  width: 100vw;
+  height: 350px;
+}
+
+.banner #banner-background {
+  height: 350px;
+  z-index: -1;
+  background-color: #409d8d;
+  background: radial-gradient(#629fa3, #409d8d);
+}
+
+.banner #banner-title {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 350px;
+  font-family: "Rambla";
+  font-size: 50px;
+  color: white;
+  text-shadow: 2px 2px 8px #1749478a;
+}
+
+.body-bg {
+  background-color: white;
+}
+
+.grid .gutter-sizer {
+  width: 5%;
+}
+
+.grid #meeting-card {
+  background-color: #409d8d;
+  color: white;
+}
+
+.grid .post .card-title {
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  font-size: 20px;
+}
+
+.grid .post .carousel-item {
+  height: 300px;
+  overflow: hidden;
+  width: 100%;
+  background-color: #2b2b2b;
+}
+
+.grid .post .carousel-item img {
+  vertical-align: center;
+  min-width: 100%;
+  min-height: 300px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.grid .card {
+  max-width: 400px;
+}
+/*# sourceMappingURL=index.css.map */

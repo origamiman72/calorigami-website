@@ -31,7 +31,7 @@ def read_data(filepath):
     indiv_data = curr_data.split('---')
     ret_list = []
     for data in indiv_data:
-        keyvals = [line.split(':') for line in data.split('\n') if line != '']
+        keyvals = [line.split('//')[0].split(':', 1) for line in data.split('\n') if line != '' and line.split('//')[0]]
         ret_list.append({k: v for k, v in keyvals})
     return ret_list
 
@@ -44,7 +44,6 @@ def process_index(index_data):
         post['image-folder'] = "".join(post['image-folder'].split())
         post['images'] = []
         post['images'] = ['img/' + post['image-folder'] + '/' + img for img in sorted(os.listdir('./static/img/' + post['image-folder'])) if img != '.DS_Store']
-        print(post['images'])
 
 if __name__ == '__main__':
     app.run(debug=True)

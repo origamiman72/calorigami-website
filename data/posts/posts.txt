@@ -24,5 +24,65 @@ title: 9/21/21 Meeting
 description: During our regular meeting, we folded the Youtube, Zoom, and Snapchat logos!
 image-folder: meeting-9-21-21
 
+---
+
+title: 11/12/19 Meeting
+description: During our regular meeting, we folded unicorns designed by club member Paolo Sanchez. Afterwards, we had a giant folding social!
+image-folder: meeting-11-12-19
+
+---
+
+title: 11/5/19 Meeting
+description: 🍓🍓🍓
+image-folder: meeting-11-5-19
+
+---
+
+title: 10/29/19 Meeting
+description: Today was our Halloween social! There was snacks, origami games...and lots of bats.
+image-folder: meeting-10-29-19
+
+---
+
+title: 10/22/19 Meeting
+description: Tessellation: "an arrangement of shapes closely fitted together, especially of polygons in a repeated pattern without gaps or overlapping."
+image-folder: meeting-10-22-19
+
+---
+
+title: 10/8/19 Meeting
+description: Wow! Making these intersecting triangles was a challenge.
+image-folder: meeting-10-8-19
+
+---
+
+title: 9/24/19 Meeting
+description: We folded some lovely hexagonal and octagonal pots.
+image-folder: meeting-9-24-19
+
+---
+
+title: 
+description: 
+image-folder: 
+
+---
+
+title: 
+description: 
+image-folder: 
+
+---
+
+title: 
+description: 
+image-folder: 
+
+---
+
+title: 
+description: 
+image-folder: 
+
 === 
 // Older or hidden announcements go here

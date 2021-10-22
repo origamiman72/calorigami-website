@@ -10,8 +10,31 @@ $navbar-light-active-color: white;
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: 'Spartan-VariableFont_wght';
+    src: url('fonts/Spartan-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Sarabun';
+    src: url('fonts/Sarabun-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Rambla';
+    src: url('fonts/Rambla-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 $nav-font: 'YanoneKaffeesatz-VariableFont_wght';
+$spartan-font: 'Spartan-VariableFont_wght';
+$title-font: 'Rambla';
 
 header {
     background-color: white;
@@ -19,10 +42,13 @@ header {
 
 .navbar-light {
     .navbar-brand {
-        color: $calo-accent;
-        font-family: $nav-font;
-        padding-top: 12px;
-        font-size: 24px;
+        a {
+            color: $calo-accent;
+            font-family: $nav-font;
+            padding-top: 12px;
+            font-size: 24px;
+            text-decoration: none;
+        }
     }
 }
 

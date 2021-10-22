@@ -13,8 +13,10 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <img src="{{ url_for('static', filename='img/assets/CAL Origami Logo.png') }}" id="navbar-logo" />
-            <div class="navbar-brand">CAL Origami</div>
+            <a href="/" class="hstack gap-2">
+                <img src="{{ url_for('static', filename='img/assets/CAL Origami Logo.png') }}" id="navbar-logo" />
+            </a>
+            <div class="navbar-brand"><a href="/">CAL Origami</a></div>
         </div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav">

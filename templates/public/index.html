@@ -4,213 +4,180 @@
 
 {% block content %}
 
-<!--content start -->
-<h2 style="text-align:left;"><font size="5">Welcome to the Cal Origami Website!</font><meta charset="UTF-8"></h2><p>
+<!-- Libraries/Styling -->
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+<script src="{{ url_for('static',filename='lib/vanta/three.min.js') }}"></script>
+<script src="{{ url_for('static',filename='lib/vanta/vanta.birds.min.js') }}"></script>
+<script src="{{ url_for('static',filename='lib/masonry/masonry.pkgd.min.js') }}"></script>
 
-
-
-
-<!-- new posts -->
-<!--new post -->
-
-<div>
-    {{ announcment_text }}
-</div>
-
-{% for post in post_list %}
-<div>
-    <h1 style="text-align:left; font-size:2em"><strong><em>{{ post.title }}</em></strong></h1>
-    {{ post.description }}
-    <br /><br />
-
-    {% for img in post.images %}
-        <a href={{ url_for('static', filename=img) }} rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-            <img style="height:225px;" src={{ url_for('static', filename=img)}} alt="Picture" />
-        </a>
-    {% endfor %}
-    <br /><br />
-</div>
-{% endfor %}
-
-<div>
-    <h1 style="text-align:left; font-size:2em"><strong><em>11/12/19 Meeting</em></strong></h1>
-    During our regular meeting, we folded unicorns designed by club member Paolo Sanchez. Afterward, we had a giant folding social!
-    <br /><br />
-
-    <a href="{{url_for('static', filename='img/Unicorns.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-        <img style="width:250px;" src="{{url_for('static', filename='img/Unicorns.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-    </a>
-    <a href="{{url_for('static', filename='img/Giant.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-        <img style="width:250px;" src="{{url_for('static', filename='img/Giant.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-    </a>
-    <br /><br />
-</div>
-<div>
-    <h1 style="text-align:left; font-size:2em"><strong><em>11/5/19 Meeting</em></strong></h1>
-    🍓🍓🍓
-    <br /><br />
-
-    <a href="{{url_for('static', filename='img/Strawberries.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-        <img style="width:250px;" src="{{url_for('static', filename='img/Strawberries.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-    </a>
-    <br /><br />
-</div>
-<div>
-    <h1 style="text-align:left; font-size:2em"><strong><em>10/29/19 Meeting</em></strong></h1>
-    Today was our Halloween social! There was snacks, origami games...and lots of bats.
-    <br /><br />
-
-    <a href="{{url_for('static', filename='img/Bats.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-        <img style="width:250px;" src="{{url_for('static', filename='img/Bats.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-    </a>
-    <br /><br />
-</div>
-<div>
-    <h1 style="text-align:left; font-size:2em"><strong><em>10/22/19 Meeting</em></strong></h1>
-    Tessellation: "an arrangement of shapes closely fitted together, especially of polygons in a repeated pattern without gaps or overlapping."
-    <br /><br />
-
-    <a href="{{url_for('static', filename='img/Tessellations.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-        <img style="width:250px;" src="{{url_for('static', filename='img/Tessellations.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-    </a>
-    <br /><br />
-</div>
-<div>
-    <h1 style="text-align:left; font-size:2em"><strong><em>10/8/19 Meeting</em></strong></h1>
-    Wow! Making these intersecting triangles was a challenge.
-    <br /><br />
-
-    <a href="{{url_for('static', filename='img/Triangles1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-        <img style="width:250px;" src="{{url_for('static', filename='img/Triangles1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-    </a>
-    <a href="{{url_for('static', filename='img/Triangles2.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-        <img style="width:250px;" src="{{url_for('static', filename='img/Triangles2.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-    </a>
-    <br /><br />
-</div>
-<div>
-    <h1 style="text-align:left; font-size:2em"><strong><em>9/24/19 Meeting</em></strong></h1>
-    We folded some lovely hexagonal and octagonal pots.
-    <br /><br />
-
-    <a href="{{url_for('static', filename='img/Pots.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-        <img style="width:250px;" src="{{url_for('static', filename='img/Pots.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-    </a>
-    <br /><br />
-</div>
-<div class='columnright' style='width: 520px; float:left; font-size: 15px; border:0px solid #cc0000; margin-left: 30px;'>
-
-  <div>
-      <h1 style="text-align:left; font-size:2em"><strong><em>Instagram Page Launched</em></strong></h1>
-      We now officially have an Instagram! Come check us out at https://www.instagram.com/calorigami/
-      <br /><br />
-
-      <a href="https://www.instagram.com/calorigami/" target="_blank" title=""><img src="{{url_for('static', filename='img/Insta.png')}}" style='height:32px; width:32px;'></a>
-      <br /><br />
-  </div>
-  <div>
-      <h1 style="text-align:left; font-size:2em"><strong><em>9/10/19 Meeting</em></strong></h1>
-      The first meeting of the semester was a success! Here's what we folded!
-      <br /><br />
-
-      <a href="{{url_for('static', filename='img/9-10-19.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-          <img style="width:250px;" src="{{url_for('static', filename='img/9-10-19.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-      </a>
-      <br /><br />
-  </div>
-    <div>
-        <h1 style="text-align:left; font-size:2em"><strong><em>4/11/17 Meeting</em></strong></h1>
-        Thank you all for folding foxes, bunnies, and modules with us tonight! Bunnies don't eat carrots, omg!
-        <br /><br />
-
-        <a href="{{url_for('static', filename='img/04-11-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-            <img style="width:250px;" src="{{url_for('static', filename='img/04-11-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-        </a>
-        <a href="{{url_for('static', filename='img/04-11-17_pic2.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-            <img style="width:250px;" src="{{url_for('static', filename='img/04-11-17_pic2.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-        </a>
-        <br /><br />
+<!-- Banner -->
+<div class="banner">
+    <div id="banner-background">
+        <div id="banner-title">CAL Origami</div>
     </div>
-    <div>
-        <h1 style="text-align:left; font-size:2em"><strong><em>3/14/17 Meeting</em></strong></h1>
-        Pie for Pi Day and three-headed cranes because why not!
-        <br /><br />
+</div>
 
-        <a href="{{url_for('static', filename='img/03-14-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-            <img style="width:250px;" src="{{url_for('static', filename='img/03-14-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-        </a>
-        <br /><br />
-    </div>
-    <div>
-        <h1 style="text-align:left; font-size:2em"><strong><em>2/28/17 Meeting</em></strong></h1>
-        Snakes and dragons!!! Thank you all for making these wonderful reptiles!
-        <br /><br />
+<div class="shadow-sm container-fluid body-bg">
+    <div class="container mt-4">
+        <!-- Start Masonry -->
+        <!-- TODO: Make masonry full width with gutters -->
+        <div class="grid">
+            <div class="card shadow grid-item mb-4 announcement-card" id="meeting-card">
+                <div class="card-body">
+                    <div class="card-title">Meeting</div>
+                    <div class="card-text">{{ announcment_text }}</div>
+                </div>
+            </div>
 
-        <a href="{{url_for('static', filename='img/02-28-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-            <img style="width:250px;" src="{{url_for('static', filename='img/02-28-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-        </a>
-        <a href="{{url_for('static', filename='img/02-28-17_pic2.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-            <img style="width:250px;" src="{{url_for('static', filename='img/02-28-17_pic2.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-        </a>
-        <br /><br />
-    </div>
-    <div>
-        <h1 style="text-align:left; font-size:2em"><strong><em>2/14/17 Meeting</em></strong></h1>
-        Thanks to those who came to our meeting last week! Hope you all felt the origami love! See you in a week for our next meeting!
-        <br /><br />
+            {% for post in post_list %}
+            <div class="grid-item card shadow mb-4 post">
+                <div id="{{ 'carousel-' ~ loop.index0 }}" class="carousel slide card-img-top" data-bs-ride="carousel" data-bs-interval="false">
+                    <div class="carousel-inner">
+                    {% for img in post.images %}
+                        <!-- <a href={{ url_for('static', filename=img) }} rel='lightbox' onclick='if (!lightboxLoaded) return false'>
+                            <img style="height:225px;" src={{ url_for('static', filename=img)}} alt="Picture" />
+                        </a> -->
+                        <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
+                            <img src="{{ url_for('static', filename=img) }}" class="d-block w-100" alt="Picture">
+                        </div>
+                    {% endfor %}
+                    </div>
+                    {% if post.images|length > 1 %}
+                    <button class="carousel-control-prev" type="button" data-bs-target="{{ '#carousel-' ~ loop.index0 }}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="{{ '#carousel-' ~ loop.index0 }}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    {% endif %}
+                </div>
 
-        <a href="{{url_for('static', filename='img/02-14-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-            <img style="width:250px;" src="{{url_for('static', filename='img/02-14-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-        </a>
-        <a href="{{url_for('static', filename='img/02-14-17_pic2.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-            <img style="width:250px;" src="{{url_for('static', filename='img/02-14-17_pic2.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-        </a>
-        <br /><br />
-    </div>
-    <div>
-        <h1 style="text-align:left; font-size:2em"><strong><em>2/1/17 Meeting</em></strong></h1>
-        Thank you to everyone who came out to our first meeting of the semester last night! We hope you enjoyed playing telepictionary and folding curlicues and modules for the slinky. See you in two weeks!
-        <br /><br />
-        <a href="{{url_for('static', filename='img/01-31-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-            <img style="width:250px;" src="{{url_for('static', filename='img/01-31-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-        </a>
-        <a href="{{url_for('static', filename='img/01-31-17_pic2.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-            <img style="width:250px;" src="{{url_for('static', filename='img/01-31-17_pic2.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-        </a>
-        <br /><br />
-    </div>
-    <div style="display:none;">
-        <hr />
-        <h1 style="text-align:left; font-size:2em"><strong><em>Birds of a Feather</em></strong></h1>
-        Thanks for coming to our second meeting!  We hope you enjoyed folding your four-legged cranes and perching parrots, as well as the game we played towards the end.  As you noticed, we have moved to a new room in <strong>122 Wheeler</strong>!  This should be our permanent room for the rest of the semester.  Our next meeting will be held on <strong>Monday, October 6th from 7:30-9:30pm (same time)</strong>.  Hope to see you there!
-        <br /><br />
-        <img style="width:250px;" src="{{url_for('static', filename='img/folding-crane.JPG')}}" />
-        <img style="width:250px;" src="{{url_for('static', filename='img/folding_parrot.JPG')}}" />
-        <img style="width:250px;" src="{{url_for('static', filename='img/birds_in_row.JPG')}}" />
-        <img style="width:250px;" src="{{url_for('static', filename='img/welcome_chalk.JPG')}}" />
-        <br /><br />
-        <hr />
-    </div>
+                <div class="card-body">
+                    <div class="card-title">{{ post.title }}</div>
+                    <div class="card-text">{{ post.description }}</div>
+                </div>
+            </div>
+            {% endfor %}
 
-    <div style="display:none;">
-        <hr />
-        <h1 style="text-align:left; font-size:2em"><strong><em>First Meeting</em></strong></h1>
+            <div class='columnright' style='width: 520px; float:left; font-size: 15px; border:0px solid #cc0000; margin-left: 30px;'>
 
-        We had a great first meeting, getting to know everyone and folding bears. Thanks to everyone who showed up! Our next meeting will be about two weeks from now, on September 20th in Evans 71.
-        <br /><br />
-        <img style="width:250px;" src="{{url_for('static', filename='img/first-meeting-fa16.jpg')}}" />
-        <img style="width:250px;" src="{{url_for('static', filename='img/first-meeting-fa16-2.jpg')}}" />
-        <br /><br />
-        <hr />
-    </div>
+            <div>
+                <h1 style="text-align:left; font-size:2em"><strong><em>Instagram Page Launched</em></strong></h1>
+                We now officially have an Instagram! Come check us out at https://www.instagram.com/calorigami/
+                <br /><br />
 
-    <div style="display:none">
-        <h1 style="text-align:left;"><strong><em>Calapalooza</em></strong></h1>
-        Welcome back! Hope you all had a great summer break. Our next upcoming event is Calapalooza, which is this Wednesday from 2-7pm on Upper and Lower Sproul. We will be tabling, so look out for us!
-        <br><br>
+                <a href="https://www.instagram.com/calorigami/" target="_blank" title=""><img src="{{url_for('static', filename='img/Insta.png')}}" style='height:32px; width:32px;'></a>
+                <br /><br />
+            </div>
+            <div>
+                <h1 style="text-align:left; font-size:2em"><strong><em>9/10/19 Meeting</em></strong></h1>
+                The first meeting of the semester was a success! Here's what we folded!
+                <br /><br />
 
-        <img style="width:300px;" src="{{url_for('static', filename='img/calapalooza1.jpg')}}" />
-        <img style="width:200px;position:relative;top:-75px" src="{{url_for('static', filename='img/calapalooza2.jpeg')}}" />
+                <a href="{{url_for('static', filename='img/9-10-19.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
+                    <img style="width:250px;" src="{{url_for('static', filename='img/9-10-19.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
+                </a>
+                <br /><br />
+            </div>
+                <div>
+                    <h1 style="text-align:left; font-size:2em"><strong><em>4/11/17 Meeting</em></strong></h1>
+                    Thank you all for folding foxes, bunnies, and modules with us tonight! Bunnies don't eat carrots, omg!
+                    <br /><br />
+
+                    <a href="{{url_for('static', filename='img/04-11-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
+                        <img style="width:250px;" src="{{url_for('static', filename='img/04-11-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
+                    </a>
+                    <a href="{{url_for('static', filename='img/04-11-17_pic2.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
+                        <img style="width:250px;" src="{{url_for('static', filename='img/04-11-17_pic2.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
+                    </a>
+                    <br /><br />
+                </div>
+                <div>
+                    <h1 style="text-align:left; font-size:2em"><strong><em>3/14/17 Meeting</em></strong></h1>
+                    Pie for Pi Day and three-headed cranes because why not!
+                    <br /><br />
+
+                    <a href="{{url_for('static', filename='img/03-14-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
+                        <img style="width:250px;" src="{{url_for('static', filename='img/03-14-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
+                    </a>
+                    <br /><br />
+                </div>
+                <div>
+                    <h1 style="text-align:left; font-size:2em"><strong><em>2/28/17 Meeting</em></strong></h1>
+                    Snakes and dragons!!! Thank you all for making these wonderful reptiles!
+                    <br /><br />
+
+                    <a href="{{url_for('static', filename='img/02-28-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
+                        <img style="width:250px;" src="{{url_for('static', filename='img/02-28-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
+                    </a>
+                    <a href="{{url_for('static', filename='img/02-28-17_pic2.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
+                        <img style="width:250px;" src="{{url_for('static', filename='img/02-28-17_pic2.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
+                    </a>
+                    <br /><br />
+                </div>
+                <div>
+                    <h1 style="text-align:left; font-size:2em"><strong><em>2/14/17 Meeting</em></strong></h1>
+                    Thanks to those who came to our meeting last week! Hope you all felt the origami love! See you in a week for our next meeting!
+                    <br /><br />
+
+                    <a href="{{url_for('static', filename='img/02-14-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
+                        <img style="width:250px;" src="{{url_for('static', filename='img/02-14-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
+                    </a>
+                    <a href="{{url_for('static', filename='img/02-14-17_pic2.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
+                        <img style="width:250px;" src="{{url_for('static', filename='img/02-14-17_pic2.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
+                    </a>
+                    <br /><br />
+                </div>
+                <div>
+                    <h1 style="text-align:left; font-size:2em"><strong><em>2/1/17 Meeting</em></strong></h1>
+                    Thank you to everyone who came out to our first meeting of the semester last night! We hope you enjoyed playing telepictionary and folding curlicues and modules for the slinky. See you in two weeks!
+                    <br /><br />
+                    <a href="{{url_for('static', filename='img/01-31-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
+                        <img style="width:250px;" src="{{url_for('static', filename='img/01-31-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
+                    </a>
+                    <a href="{{url_for('static', filename='img/01-31-17_pic2.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
+                        <img style="width:250px;" src="{{url_for('static', filename='img/01-31-17_pic2.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
+                    </a>
+                    <br /><br />
+                </div>
+                <div style="display:none;">
+                    <hr />
+                    <h1 style="text-align:left; font-size:2em"><strong><em>Birds of a Feather</em></strong></h1>
+                    Thanks for coming to our second meeting!  We hope you enjoyed folding your four-legged cranes and perching parrots, as well as the game we played towards the end.  As you noticed, we have moved to a new room in <strong>122 Wheeler</strong>!  This should be our permanent room for the rest of the semester.  Our next meeting will be held on <strong>Monday, October 6th from 7:30-9:30pm (same time)</strong>.  Hope to see you there!
+                    <br /><br />
+                    <img style="width:250px;" src="{{url_for('static', filename='img/folding-crane.JPG')}}" />
+                    <img style="width:250px;" src="{{url_for('static', filename='img/folding_parrot.JPG')}}" />
+                    <img style="width:250px;" src="{{url_for('static', filename='img/birds_in_row.JPG')}}" />
+                    <img style="width:250px;" src="{{url_for('static', filename='img/welcome_chalk.JPG')}}" />
+                    <br /><br />
+                    <hr />
+                </div>
+
+                <div style="display:none;">
+                    <hr />
+                    <h1 style="text-align:left; font-size:2em"><strong><em>First Meeting</em></strong></h1>
+
+                    We had a great first meeting, getting to know everyone and folding bears. Thanks to everyone who showed up! Our next meeting will be about two weeks from now, on September 20th in Evans 71.
+                    <br /><br />
+                    <img style="width:250px;" src="{{url_for('static', filename='img/first-meeting-fa16.jpg')}}" />
+                    <img style="width:250px;" src="{{url_for('static', filename='img/first-meeting-fa16-2.jpg')}}" />
+                    <br /><br />
+                    <hr />
+                </div>
+
+                <div style="display:none">
+                    <h1 style="text-align:left;"><strong><em>Calapalooza</em></strong></h1>
+                    Welcome back! Hope you all had a great summer break. Our next upcoming event is Calapalooza, which is this Wednesday from 2-7pm on Upper and Lower Sproul. We will be tabling, so look out for us!
+                    <br><br>
+
+                    <img style="width:300px;" src="{{url_for('static', filename='img/calapalooza1.jpg')}}" />
+                    <img style="width:200px;position:relative;top:-75px" src="{{url_for('static', filename='img/calapalooza2.jpeg')}}" />
+                </div>
+            </div>
+            <!-- End Masonry -->
+        </div>
     </div>
     <!-- new posts end -->
 
@@ -252,16 +219,46 @@
 
         <div><div style="height:0px;overflow:hidden"></div>
         <div id='971780418361842910-slideshow'></div>
-        <!-- <script type='text/javascript'>
-        (function(jQuery) {
-            function init() { wSlideshow.render({elementID:"971780418361842910",nav:"none",navLocation:"bottom",captionLocation:"bottom",transition:"fade",autoplay:"1",speed:"5",aspectRatio:"auto",showControls:"true",randomStart:"false",images:[{"url":"6/5/4/7/6547949/815771.jpg","width":"333","height":"249"},{"url":"6/5/4/7/6547949/1608283.jpg","width":"333","height":"249"},{"url":"6/5/4/7/6547949/1799827.jpg","width":"333","height":"249"},{"url":"6/5/4/7/6547949/7854624.jpg","width":"187","height":"250"},{"url":"6/5/4/7/6547949/8504.jpg","width":"333","height":"221"},{"url":"6/5/4/7/6547949/3827014.jpg","width":"333","height":"249"},{"url":"6/5/4/7/6547949/8534374.jpg","width":"333","height":"249"},{"url":"6/5/4/7/6547949/2550465.jpg","width":"333","height":"249"},{"url":"6/5/4/7/6547949/1939432.jpg","width":"333","height":"249"},{"url":"6/5/4/7/6547949/8549363.jpg","width":"333","height":"249"},{"url":"6/5/4/7/6547949/95158.jpg","width":"333","height":"249"},{"url":"6/5/4/7/6547949/5544672.jpg","width":"333","height":"249"},{"url":"6/5/4/7/6547949/4818553.jpg","width":"333","height":"221"},{"url":"6/5/4/7/6547949/4779759.jpg","width":"333","height":"221"},{"url":"6/5/4/7/6547949/6287190.jpg","width":"333","height":"249"},{"url":"6/5/4/7/6547949/3504611.jpg","width":"166","height":"250"}]}) }
-            jQuery ? jQuery(init) : document.observe('dom:loaded', init)
-        })(window._W && _W.jQuery)
-        </script> -->
+        <script>
+            // Banner background
+            VANTA.BIRDS({
+              el: "#banner-background",
+              mouseControls: true,
+              touchControls: true,
+              gyroControls: false,
+              minHeight: 350.00,
+              minWidth: 200.00,
+              scale: 1.00,
+              scaleMobile: 1.00,
+            //   color1: 0x2771b3,
+            //   color2: 0xd9b956,
+            color1: 0x78909b,
+            color2: 0xcab383,
+              colorMode: "lerp",
+              birdSize: 5.0,
+              wingSpan: 20.00,
+              speedLimit: 7,
+              separation: 100.00,
+              alignment: 15.00,
+              cohesion: 1.00,
+              quantity: 3.0,
+              backgroundAlpha: 0
+            })
+
+            // Posts Masonry
+            var msnry = new Masonry( '.grid', {
+                // options
+                itemSelector: '.grid-item',
+                gutter: 15,
+                // columnWidth: 200,
+                fitWidth: true,
+            });
+        </script>
 
         <div style="height:0px;overflow:hidden"></div></div>
 
-        <div><div id="370357541990970892" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><script type="text/javascript">
+        <div><div id="370357541990970892" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml">
+        <script type="text/javascript">
 
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-21456700-1']);
