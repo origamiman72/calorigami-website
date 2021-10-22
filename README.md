@@ -2,13 +2,12 @@
 
 ## Update:
 The website is currently being updated to use the Flask templating system more
-extensively to make it easier to edit by future webmasters. New information
-should be placed in `/data/` and it should be parsed and updated accordingly
-on the website.
+extensively and being redesigned to make it easier to edit by future webmasters. New information
+should be placed in `/data/` and will be automatically updated on the website.
 
 ### Pages currently using new templates:
-* `templates/officers.html`
-* `templates/index.html`
+* `templates/public/officers.html`
+* `templates/public/index.html`
 
 ## Quick Start Guide
 You must have installed:
@@ -24,10 +23,11 @@ To run the website server, run
 ```bash
 python3 server.py
 ```
-and navigate to `http://127.0.0.1:5000` in your browser to view the site.
+and navigate to `http://localhost:5000` in your browser to view the site.
 
 To update the website, navigate to the relevant folder in `/data/` and update
-using this format:\\
+using this format:
+
 ```
 key1: value1
 key2: value2
@@ -46,7 +46,7 @@ key1: value1
 
 As an example, for an officer, `/data/officers/officers.txt` should look like
 ```
-name: John Doe
+name: Oski Bear
 position: President
 year: 4th
 major: EECS
@@ -54,24 +54,49 @@ other: Likes python (the snake)
 
 ---
 
-name: John Deere
+name: Carol Christ
 //etc
 ```
 
-### Special pages
-The posts page, located in `/data/posts/posts.txt` will have an announcements
-key/value pair on top. This should not appear in the rest of the page,
-e.g.
+Once all edits have been made, add and commit all changed files using git and push them to Github. You can then ssh into the OCF servers and run `./update.sh` to make your changes public.
+
+```bash
+# In your terminal
+# Add all changed files
+git add data/posts/posts.txt
+# Save/Commit your changes with a descriptive message
+git commit -m "Updated posts.txt"
+# Push your changes to github
+git push origin main
+
+# On OCF servers
+./update.sh
+```
+
+### New Posts
+The posts page/file, located at `/data/posts/posts.txt`, controls the posts and announcements that show up on the homepage.
+
+To make a new post, you must specify the type and give it a title and description.
+There are two types of posts: `announcement` and `post`. Announcements are colored by the accent color to stand out while Posts are simply white with black/grey text.
 
 ```
-announcement: Our next meeting will be held on top of the Campanile on January 1st!
+// New Announcement Post
+
+title: Meeting next week!
+type: announcement
+description: We are meeting next week at 7pm.
 
 ---
 
+// New Meeting Post
+
 title: 1/1/01 Meeting
-//etc
+type: post
+description: Today we folded paper!
 ```
-To add images to a post in announcements, create a folder under `/static/img` and place your images within it. Then, place the folder name under the key `image-folder`. If there are no images, write `no-images` instead.
+
+
+To add images to a post or announcement, create a folder under `/static/img` and place your images within it. Then, place the folder name under the key `image-folder`.
 
 e.g. for `/static/img/meeting-1-1-01/<images>`, `/data/posts/posts.txt` should look like
 
@@ -79,15 +104,54 @@ e.g. for `/static/img/meeting-1-1-01/<images>`, `/data/posts/posts.txt` should l
 ---
 
 title: 1/1/01 Meeting
+type: post
 description: We folded paper!
 image-folder: meeting-1-1-01
-// for no images, write image-folder: no-images
 
 ---
 ```
 
+### Advanced
 
-## Background:
+The templating system supports inline html. As such, to bold text simply surround it with a `<strong>` tag, and to italicize surround it with an `<em>` tag. To link to a website, surround it with an `<a>` tag.
+
+```html
+description: This text is <strong>bold</strong>. This is in <em>italics</em>. This is a <a href="https://ocf.io">link</a>.
+```
+
+If you would like to add custom styles to a post, add an `id` key/value. You can then target the post in `static/styles/scss/index.scss` using the new id value.
+
+```css
+// data/posts/posts.txt
+title: 1/01/01 Meeting
+type: post
+description: We folded paper!
+id: first-meeting-post
+
+// static/styles/scss/index.scss
+#first-meeting-post {
+    color: blue;
+    // etc
+}
+```
+
+#### Custom Post
+
+If you would like to create your own html for a post instead of using the default templates, you can do so by specifying an `html` key/value with the name of an html file for the new post. A template has been provided in `templates/custom_post_template.html` with more detailed instructions.
+
+```
+---
+
+html: custom_post.html // This will render templates/custom_post.html instead of the default post
+
+---
+```
+
+#### Other Information
+
+All scss files should be compiled into the `/static/styles` folder. All html files in `templates/public` are accessible publicly by visiting `calorigami.berkeley.edu/file.html`.
+
+## Background / Original README:
 The Cal Origami website used to be hosted on weebly [calorigami.weebly.com/] and
 when the staff decided to move it to the current site [calorigami.berkeley.edu]
 they just saved the html from each weebly page. This resulted in a website with

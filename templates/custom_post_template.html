@@ -1,0 +1,50 @@
+<!-- This is an example template for a custom post! -->
+
+<!-- Author: Abhik Ahuja | ahujaabhik at protonmail.com -->
+<!-- Last Updated: October 21, 2021 -->
+
+<!-- Instructions -->
+<!-- To insert a custom post instead of using the normal templates,
+specify `html: file.html` in data/posts/posts.txt, and make sure that
+file.html exists in templates/
+Then, file.html will be loaded instead of the default template for a post. -->
+
+<!-- Note that the website is using Bootstrap styles and custom styles can be
+added in static/styles/scss/index.scss and compiled to static/styles/index.css
+(or a new file can be made/imported) -->
+
+<!-- The default template has been provided below as an example -->
+
+<div class="grid-item card shadow mb-4 {{ post.type }}" id="{{ post.id }}">
+
+    {% if post['image-folder'] %}
+        <!-- Image Carousel -->
+        <div id="{{ 'carousel-' ~ loop.index0 }}" class="carousel slide card-img-top" data-bs-ride="carousel" data-bs-interval="false">
+            <div class="carousel-inner">
+            {% for img in post.images %}
+                <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
+                    <img src="{{ url_for('static', filename=img) }}" class="d-block w-100" alt="Picture">
+                </div>
+            {% endfor %}
+            </div>
+
+            <!-- Carousel Controls -->
+            {% if post.images|length > 1 %}
+                <button class="carousel-control-prev" type="button" data-bs-target="{{ '#carousel-' ~ loop.index0 }}" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="{{ '#carousel-' ~ loop.index0 }}" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <!-- Post Description -->
+    <div class="card-body">
+        <div class="card-title">{{ post.title }}</div>
+        <div class="card-text">{{ post.description|safe }}</div>
+    </div>
+</div>

@@ -18,14 +18,14 @@ $banner-height: 350px;
         vertical-align: middle;
         line-height: $banner-height; 
         font-family: $title-font;
-        font-size: 50px;
-        color: white;
+        font-size: 70px;
+        color: $banner-title-color;
         text-shadow: 2px 2px 8px #1749478a;
     }
 }
 
 .body-bg {
-    background-color: white;
+    background-color: $body-background-color;
 }
 
 .grid {
@@ -34,23 +34,19 @@ $banner-height: 350px;
         width: 5%;
     }
 
-    #meeting-card {
-        background-color: $calo-accent;
-        color: white;
-    }
-
-    .post {
-
+    .card {
         .card-title {
             font-family: $nav-font;
             font-size: 20px;
         }
+    }
+
+    .post {
 
         .carousel-item {
             height: 300px;
             overflow: hidden;
             width: 100%;
-            background-color: rgb(43, 43, 43);
 
             img {
                 vertical-align: center;
@@ -62,7 +58,28 @@ $banner-height: 350px;
         }
     }
 
+    .announcement {
+        background-color: $calo-accent;
+        color: white;
+
+        .card-title {
+            font-size: 24px;
+        }
+
+        a {
+            color: $announcement-link-color;
+        }
+    }
+
+
     .card {
-        max-width: 400px;
+        width: 400px;
+    }
+
+    #meeting-card {
+
+        strong {
+            color: $meeting-accent-color;
+        }
     }
 }

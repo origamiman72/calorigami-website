@@ -32,6 +32,10 @@
   font-display: swap;
 }
 
+a {
+  color: "YanoneKaffeesatz-VariableFont_wght";
+}
+
 header {
   background-color: white;
 }
@@ -79,5 +83,15 @@ nav .nav-item.active .nav-link {
 
 nav .nav-item.active:hover .nav-link {
   color: white;
+}
+
+#footer {
+  background-color: #409d8d;
+  color: white;
+  border-top: #00858f solid 1px;
+}
+
+#footer a {
+  color: #ffcc9d;
 }
 /*# sourceMappingURL=main.css.map */

@@ -32,6 +32,10 @@
   font-display: swap;
 }
 
+a {
+  color: "YanoneKaffeesatz-VariableFont_wght";
+}
+
 header {
   background-color: white;
 }
@@ -81,6 +85,11 @@ nav .nav-item.active:hover .nav-link {
   color: white;
 }
 
+#footer {
+  background-color: #409d8d;
+  color: white;
+}
+
 .banner {
   width: 100vw;
   height: 350px;
@@ -97,8 +106,8 @@ nav .nav-item.active:hover .nav-link {
   text-align: center;
   vertical-align: middle;
   line-height: 350px;
-  font-family: "Rambla";
-  font-size: 50px;
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  font-size: 70px;
   color: white;
   text-shadow: 2px 2px 8px #1749478a;
 }
@@ -111,12 +120,7 @@ nav .nav-item.active:hover .nav-link {
   width: 5%;
 }
 
-.grid #meeting-card {
-  background-color: #409d8d;
-  color: white;
-}
-
-.grid .post .card-title {
+.grid .card .card-title {
   font-family: "YanoneKaffeesatz-VariableFont_wght";
   font-size: 20px;
 }
@@ -125,7 +129,6 @@ nav .nav-item.active:hover .nav-link {
   height: 300px;
   overflow: hidden;
   width: 100%;
-  background-color: #2b2b2b;
 }
 
 .grid .post .carousel-item img {
@@ -136,7 +139,24 @@ nav .nav-item.active:hover .nav-link {
   object-fit: cover;
 }
 
+.grid .announcement {
+  background-color: #409d8d;
+  color: white;
+}
+
+.grid .announcement .card-title {
+  font-size: 24px;
+}
+
+.grid .announcement a {
+  color: #ffcc9d;
+}
+
 .grid .card {
-  max-width: 400px;
+  width: 400px;
+}
+
+.grid #meeting-card strong {
+  color: #ffe1b4;
 }
 /*# sourceMappingURL=index.css.map */

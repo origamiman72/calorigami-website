@@ -19,258 +19,106 @@
 
 <div class="shadow-sm container-fluid body-bg">
     <div class="container mt-4">
+
         <!-- Start Masonry -->
         <!-- TODO: Make masonry full width with gutters -->
         <div class="grid">
-            <div class="card shadow grid-item mb-4 announcement-card" id="meeting-card">
-                <div class="card-body">
-                    <div class="card-title">Meeting</div>
-                    <div class="card-text">{{ announcment_text }}</div>
-                </div>
-            </div>
 
             {% for post in post_list %}
-            <div class="grid-item card shadow mb-4 post">
-                <div id="{{ 'carousel-' ~ loop.index0 }}" class="carousel slide card-img-top" data-bs-ride="carousel" data-bs-interval="false">
-                    <div class="carousel-inner">
-                    {% for img in post.images %}
-                        <!-- <a href={{ url_for('static', filename=img) }} rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-                            <img style="height:225px;" src={{ url_for('static', filename=img)}} alt="Picture" />
-                        </a> -->
-                        <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
-                            <img src="{{ url_for('static', filename=img) }}" class="d-block w-100" alt="Picture">
+                {% if post.html %}
+                    {% include post.html %}
+                {% else %}
+
+                    <div class="grid-item card shadow mb-4 {{ post.type }}" id="{{ post.id }}">
+
+                        {% if post['image-folder'] %}
+                            <!-- Image Carousel -->
+                            <div id="{{ 'carousel-' ~ loop.index0 }}" class="carousel slide card-img-top" data-bs-ride="carousel" data-bs-interval="false">
+                                <div class="carousel-inner">
+                                {% for img in post.images %}
+                                    <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
+                                        <img src="{{ url_for('static', filename=img) }}" class="d-block w-100" alt="Picture">
+                                    </div>
+                                {% endfor %}
+                                </div>
+
+                                <!-- Carousel Controls -->
+                                {% if post.images|length > 1 %}
+                                    <button class="carousel-control-prev" type="button" data-bs-target="{{ '#carousel-' ~ loop.index0 }}" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="{{ '#carousel-' ~ loop.index0 }}" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
+                        <!-- Post Description -->
+                        <div class="card-body">
+                            <div class="card-title">{{ post.title|safe }}</div>
+                            <div class="card-text">{{ post.description|safe }}</div>
                         </div>
-                    {% endfor %}
                     </div>
-                    {% if post.images|length > 1 %}
-                    <button class="carousel-control-prev" type="button" data-bs-target="{{ '#carousel-' ~ loop.index0 }}" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="{{ '#carousel-' ~ loop.index0 }}" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                    {% endif %}
-                </div>
 
-                <div class="card-body">
-                    <div class="card-title">{{ post.title }}</div>
-                    <div class="card-text">{{ post.description }}</div>
-                </div>
-            </div>
+                {% endif %}
             {% endfor %}
-
-            <div class='columnright' style='width: 520px; float:left; font-size: 15px; border:0px solid #cc0000; margin-left: 30px;'>
-
-            <div>
-                <h1 style="text-align:left; font-size:2em"><strong><em>Instagram Page Launched</em></strong></h1>
-                We now officially have an Instagram! Come check us out at https://www.instagram.com/calorigami/
-                <br /><br />
-
-                <a href="https://www.instagram.com/calorigami/" target="_blank" title=""><img src="{{url_for('static', filename='img/Insta.png')}}" style='height:32px; width:32px;'></a>
-                <br /><br />
-            </div>
-            <div>
-                <h1 style="text-align:left; font-size:2em"><strong><em>9/10/19 Meeting</em></strong></h1>
-                The first meeting of the semester was a success! Here's what we folded!
-                <br /><br />
-
-                <a href="{{url_for('static', filename='img/9-10-19.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-                    <img style="width:250px;" src="{{url_for('static', filename='img/9-10-19.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-                </a>
-                <br /><br />
-            </div>
-                <div>
-                    <h1 style="text-align:left; font-size:2em"><strong><em>4/11/17 Meeting</em></strong></h1>
-                    Thank you all for folding foxes, bunnies, and modules with us tonight! Bunnies don't eat carrots, omg!
-                    <br /><br />
-
-                    <a href="{{url_for('static', filename='img/04-11-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-                        <img style="width:250px;" src="{{url_for('static', filename='img/04-11-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-                    </a>
-                    <a href="{{url_for('static', filename='img/04-11-17_pic2.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-                        <img style="width:250px;" src="{{url_for('static', filename='img/04-11-17_pic2.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-                    </a>
-                    <br /><br />
-                </div>
-                <div>
-                    <h1 style="text-align:left; font-size:2em"><strong><em>3/14/17 Meeting</em></strong></h1>
-                    Pie for Pi Day and three-headed cranes because why not!
-                    <br /><br />
-
-                    <a href="{{url_for('static', filename='img/03-14-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-                        <img style="width:250px;" src="{{url_for('static', filename='img/03-14-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-                    </a>
-                    <br /><br />
-                </div>
-                <div>
-                    <h1 style="text-align:left; font-size:2em"><strong><em>2/28/17 Meeting</em></strong></h1>
-                    Snakes and dragons!!! Thank you all for making these wonderful reptiles!
-                    <br /><br />
-
-                    <a href="{{url_for('static', filename='img/02-28-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-                        <img style="width:250px;" src="{{url_for('static', filename='img/02-28-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-                    </a>
-                    <a href="{{url_for('static', filename='img/02-28-17_pic2.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-                        <img style="width:250px;" src="{{url_for('static', filename='img/02-28-17_pic2.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-                    </a>
-                    <br /><br />
-                </div>
-                <div>
-                    <h1 style="text-align:left; font-size:2em"><strong><em>2/14/17 Meeting</em></strong></h1>
-                    Thanks to those who came to our meeting last week! Hope you all felt the origami love! See you in a week for our next meeting!
-                    <br /><br />
-
-                    <a href="{{url_for('static', filename='img/02-14-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-                        <img style="width:250px;" src="{{url_for('static', filename='img/02-14-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-                    </a>
-                    <a href="{{url_for('static', filename='img/02-14-17_pic2.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-                        <img style="width:250px;" src="{{url_for('static', filename='img/02-14-17_pic2.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-                    </a>
-                    <br /><br />
-                </div>
-                <div>
-                    <h1 style="text-align:left; font-size:2em"><strong><em>2/1/17 Meeting</em></strong></h1>
-                    Thank you to everyone who came out to our first meeting of the semester last night! We hope you enjoyed playing telepictionary and folding curlicues and modules for the slinky. See you in two weeks!
-                    <br /><br />
-                    <a href="{{url_for('static', filename='img/01-31-17_pic1.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-                        <img style="width:250px;" src="{{url_for('static', filename='img/01-31-17_pic1.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-                    </a>
-                    <a href="{{url_for('static', filename='img/01-31-17_pic2.jpg')}}" rel='lightbox' onclick='if (!lightboxLoaded) return false'>
-                        <img style="width:250px;" src="{{url_for('static', filename='img/01-31-17_pic2.jpg')}}"alt="Picture" style="width:auto;max-width:100%" />
-                    </a>
-                    <br /><br />
-                </div>
-                <div style="display:none;">
-                    <hr />
-                    <h1 style="text-align:left; font-size:2em"><strong><em>Birds of a Feather</em></strong></h1>
-                    Thanks for coming to our second meeting!  We hope you enjoyed folding your four-legged cranes and perching parrots, as well as the game we played towards the end.  As you noticed, we have moved to a new room in <strong>122 Wheeler</strong>!  This should be our permanent room for the rest of the semester.  Our next meeting will be held on <strong>Monday, October 6th from 7:30-9:30pm (same time)</strong>.  Hope to see you there!
-                    <br /><br />
-                    <img style="width:250px;" src="{{url_for('static', filename='img/folding-crane.JPG')}}" />
-                    <img style="width:250px;" src="{{url_for('static', filename='img/folding_parrot.JPG')}}" />
-                    <img style="width:250px;" src="{{url_for('static', filename='img/birds_in_row.JPG')}}" />
-                    <img style="width:250px;" src="{{url_for('static', filename='img/welcome_chalk.JPG')}}" />
-                    <br /><br />
-                    <hr />
-                </div>
-
-                <div style="display:none;">
-                    <hr />
-                    <h1 style="text-align:left; font-size:2em"><strong><em>First Meeting</em></strong></h1>
-
-                    We had a great first meeting, getting to know everyone and folding bears. Thanks to everyone who showed up! Our next meeting will be about two weeks from now, on September 20th in Evans 71.
-                    <br /><br />
-                    <img style="width:250px;" src="{{url_for('static', filename='img/first-meeting-fa16.jpg')}}" />
-                    <img style="width:250px;" src="{{url_for('static', filename='img/first-meeting-fa16-2.jpg')}}" />
-                    <br /><br />
-                    <hr />
-                </div>
-
-                <div style="display:none">
-                    <h1 style="text-align:left;"><strong><em>Calapalooza</em></strong></h1>
-                    Welcome back! Hope you all had a great summer break. Our next upcoming event is Calapalooza, which is this Wednesday from 2-7pm on Upper and Lower Sproul. We will be tabling, so look out for us!
-                    <br><br>
-
-                    <img style="width:300px;" src="{{url_for('static', filename='img/calapalooza1.jpg')}}" />
-                    <img style="width:200px;position:relative;top:-75px" src="{{url_for('static', filename='img/calapalooza2.jpeg')}}" />
-                </div>
             </div>
             <!-- End Masonry -->
         </div>
     </div>
-    <!-- new posts end -->
 
-    <!-- columnmain --></div>
+    <script>
+        // Banner background
+        VANTA.BIRDS({
+            el: "#banner-background",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 350.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+        //   color1: 0x2771b3,
+        //   color2: 0xd9b956,
+        color1: 0x78909b,
+        color2: 0xcab383,
+            colorMode: "lerp",
+            birdSize: 5.0,
+            wingSpan: 20.00,
+            speedLimit: 7,
+            separation: 100.00,
+            alignment: 15.00,
+            cohesion: 1.00,
+            quantity: 3.0,
+            backgroundAlpha: 0
+        })
 
-    <div class='column' style='width:320px; float:right; border:0px solid #0000cc; margin-left: 20px;'>
+        // Posts Masonry
+        var msnry = new Masonry( '.grid', {
+            // options
+            itemSelector: '.grid-item',
+            gutter: 15,
+            // columnWidth: 200,
+            fitWidth: true,
+        });
+    </script>
 
-        <!--<h2><b><i>Mailing List</i></b></h2>
-        <a href='https://calmail.berkeley.edu/manage/list/listinfo/calorigami@lists.berkeley.edu' style='display: block; border-radius: 18px; font-size: 15px; background: #016384; width: 220px; padding: 10px; color: #fff; margin-top: 0px;'>Sign up for the mailing list here!</a>
+    <script type="text/javascript">
 
-        <p><p>-->
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-21456700-1']);
+    _gaq.push(['_trackPageview']);
 
-        <!-- <h2 style="text-align:left;"><strong><em>EBOC 2018</em></strong></h2>
-        We are pleased to announce we will be hosting the <b>East Bay Origami Convention</b> again next year. Visit our <u><a href='/eboc'>EBOC page</a></u> for more info. -->
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
 
-
-        <h2 style="text-align:left;"><strong><em>Fall 2020 Meetings</em></strong></h2>
-<!--         Our next meeting will be <b><span color=blue>Wednesday, November 28th</span></b>, from 7:00-9:00pm in Dwinelle 262!<br><br>
- -->    We will be having a social with virtual games on Tuesday, September 15 from 8-9 pm!
-        <br><br>
-
-        <!-- <b><i>Upcoming Meetings</i></b><br>
-        November 26<br><br> -->
-
-        <img src='https://i.imgur.com/VXoWc7B.png' style="margin-top:20px; width: 49px; height: 50px;">
-        <!--<p style="font-size:8px">(The website is under construction!  Stay tuned for design changes and total revamp!)</p><br>-->
-
-        <!--<hr style="height: 1px; width: 300px; margin-left: 0px;">-->
-
-
-        <!-- columnright --></div>
-
-
-
-        <!--new post -->
-
-        <div style='clear:both; height: 50px;'></div>
-        <hr style='width: 70%; height: 1px;'>
-
-        <div><div style="height:0px;overflow:hidden"></div>
-        <div id='971780418361842910-slideshow'></div>
-        <script>
-            // Banner background
-            VANTA.BIRDS({
-              el: "#banner-background",
-              mouseControls: true,
-              touchControls: true,
-              gyroControls: false,
-              minHeight: 350.00,
-              minWidth: 200.00,
-              scale: 1.00,
-              scaleMobile: 1.00,
-            //   color1: 0x2771b3,
-            //   color2: 0xd9b956,
-            color1: 0x78909b,
-            color2: 0xcab383,
-              colorMode: "lerp",
-              birdSize: 5.0,
-              wingSpan: 20.00,
-              speedLimit: 7,
-              separation: 100.00,
-              alignment: 15.00,
-              cohesion: 1.00,
-              quantity: 3.0,
-              backgroundAlpha: 0
-            })
-
-            // Posts Masonry
-            var msnry = new Masonry( '.grid', {
-                // options
-                itemSelector: '.grid-item',
-                gutter: 15,
-                // columnWidth: 200,
-                fitWidth: true,
-            });
-        </script>
-
-        <div style="height:0px;overflow:hidden"></div></div>
-
-        <div><div id="370357541990970892" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml">
-        <script type="text/javascript">
-
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-21456700-1']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-        </script></div></div>
+    </script></div></div>
 
 
-        {% endblock %}
+{% endblock %}

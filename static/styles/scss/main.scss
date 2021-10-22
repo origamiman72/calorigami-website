@@ -1,6 +1,10 @@
 /* Colors */
 $calo-accent: #409d8d;
 $navbar-light-active-color: white;
+$banner-title-color: white;
+$body-background-color: white;
+$meeting-accent-color: rgb(255, 225, 180);
+$announcement-link-color: rgb(255, 204, 157);
 
 /* Fonts */
 @font-face {
@@ -34,7 +38,11 @@ $navbar-light-active-color: white;
 
 $nav-font: 'YanoneKaffeesatz-VariableFont_wght';
 $spartan-font: 'Spartan-VariableFont_wght';
-$title-font: 'Rambla';
+$title-font: $nav-font;
+
+a {
+    color: $nav-font;
+}
 
 header {
     background-color: white;
@@ -87,5 +95,15 @@ nav {
                 }
             }
         }
+    }
+}
+
+#footer {
+    background-color: $calo-accent;
+    color: white;
+    border-top: rgb(0, 133, 143) solid 1px;
+
+    a {
+        color: $announcement-link-color;
     }
 }
