@@ -121,6 +121,10 @@ nav .nav-item.active:hover .nav-link {
   background-color: white;
 }
 
+#masonry {
+  margin: auto;
+}
+
 .grid .gutter-sizer {
   width: 5%;
 }
@@ -163,6 +167,12 @@ nav .nav-item.active:hover .nav-link {
 
 .grid .card {
   width: 400px;
+}
+
+@media (max-width: 575.98px) {
+  .grid .card {
+    width: 325px;
+  }
 }
 
 .grid #meeting-card strong {
