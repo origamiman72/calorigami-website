@@ -1,0 +1,14 @@
+@import 'main';
+
+.title {
+    font-family: $nav-font;
+    color: $calo-accent;
+}
+
+#officer-table {
+    .title {
+        // text-align: center;
+    }
+    td {
+    }
+}

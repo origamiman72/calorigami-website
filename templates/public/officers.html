@@ -4,28 +4,33 @@
 
 {% block content %}
 
-<h1>Officers</h1>
+<!-- Libraries/Styling -->
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/officers.css') }}">
 
+<div class="d-flex flex-column container mt-4">
+  <h1 class="ms-auto me-auto title">Officers</h1>
 
-<table>
-  <tbody>
-  {% for officer in officer_list %}
-    {% if loop.index % 2 == 1 %}
-    <tr>
-    {% endif %}
-      <td>
-        <h2>{{ officer.name }}</h2>
-        <div>
-          <b>Position:</b> {{ officer.position }}<br />
-          <b>Year:</b> {{ officer.year }}<br />
-          <b>Major:</b> {{ officer.major }}<br />
-          <b>Other:</b> {{ officer.other }}<br />
-        </div>
-      </td>
-    {% if loop.index % 2 == 0 %}
-    <tr>
-    {% endif %}
-  {% endfor %}
-  </tbody>
-</table>
+  <table class="card shadow ms-auto me-auto mb-4 p-3" id="officer-table">
+    <tbody>
+    {% for officer in officer_list %}
+      {% if loop.index % 2 == 1 %}
+      <tr>
+      {% endif %}
+        <td class="p-4">
+          <h2 class="title">{{ officer.name }}</h2>
+          <div>
+            <b>Position:</b> {{ officer.position }}<br />
+            <b>Year:</b> {{ officer.year }}<br />
+            <b>Major:</b> {{ officer.major }}<br />
+            <b>Other:</b> {{ officer.other }}<br />
+          </div>
+        </td>
+      {% if loop.index % 2 == 0 %}
+      <tr>
+      {% endif %}
+    {% endfor %}
+    </tbody>
+  </table>
+
+</div>
 {% endblock %}

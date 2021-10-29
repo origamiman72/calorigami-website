@@ -99,4 +99,9 @@ nav .nav-item.active:hover .nav-link {
 #footer a {
   color: #ffcc9d;
 }
-/*# sourceMappingURL=main.css.map */
+
+.title {
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  color: #409d8d;
+}
+/*# sourceMappingURL=officers.css.map */

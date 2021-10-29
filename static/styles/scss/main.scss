@@ -40,6 +40,10 @@ $nav-font: 'YanoneKaffeesatz-VariableFont_wght';
 $spartan-font: 'Spartan-VariableFont_wght';
 $title-font: $nav-font;
 
+body {
+    font-family: sans-serif;
+}
+
 a {
     color: $nav-font;
 }
