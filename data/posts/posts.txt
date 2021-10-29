@@ -5,6 +5,20 @@ id: meeting-card
 
 ---
 
+title: 10/26/21 Meeting
+type: post
+description: During our Halloween social, we had snacks, squid games, and a paper airplane contest!
+image-folder: meeting-10-26-21
+
+---
+
+title: 10/19/21 Meeting
+type: post
+description: Ghosts, pumpkins and bats! Spooky folds for Halloween month!
+image-folder: meeting-10-19-21
+
+---
+
 title: 10/12/21 Meeting
 type: post
 description: This week we folded Squid Game cards designed by our officer, Kelly Tan!
