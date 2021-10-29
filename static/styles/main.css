@@ -34,6 +34,10 @@
 
 body {
   font-family: sans-serif;
+  background-color: #fcfcfc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -42,6 +46,10 @@ a {
 
 header {
   background-color: white;
+}
+
+#content {
+  padding-top: 62px;
 }
 
 .navbar-light .navbar-brand a {
@@ -90,13 +98,19 @@ nav .nav-item.active:hover .nav-link {
   color: white;
 }
 
-#footer {
+.title {
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  color: #409d8d;
+}
+
+footer {
   background-color: #409d8d;
   color: white;
   border-top: #00858f solid 1px;
+  margin-top: auto;
 }
 
-#footer a {
+footer a {
   color: #ffcc9d;
 }
 /*# sourceMappingURL=main.css.map */

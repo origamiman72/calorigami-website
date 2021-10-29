@@ -10,27 +10,23 @@
 <div class="d-flex flex-column container mt-4">
   <h1 class="ms-auto me-auto title">Officers</h1>
 
-  <table class="card shadow ms-auto me-auto mb-4 p-3" id="officer-table">
-    <tbody>
+  <div class="card shadow ms-auto me-auto mb-4 p-3" id="officer-table">
     {% for officer in officer_list %}
       {% if loop.index % 2 == 1 %}
-      <tr>
+      <div class="row">
       {% endif %}
-        <td class="p-4">
+        <!-- TODO: Maybe add images? -->
+        <div class="col-md-6 p-4">
           <h2 class="title">{{ officer.name }}</h2>
-          <div>
-            <b>Position:</b> {{ officer.position }}<br />
-            <b>Year:</b> {{ officer.year }}<br />
-            <b>Major:</b> {{ officer.major }}<br />
-            <b>Other:</b> {{ officer.other }}<br />
-          </div>
-        </td>
+          <div class="text-nowrap"><b>Position:</b> {{ officer.position }}</div>
+          <div class="text-nowrap"><b>Year:</b> {{ officer.year }}</div>
+          <div class="text-nowrap"><b>Major:</b> {{ officer.major }}</div>
+          <div class="text-nowrap"><b>Other:</b> {{ officer.other }}</div>
+        </div>
       {% if loop.index % 2 == 0 %}
-      <tr>
+      </div>
       {% endif %}
     {% endfor %}
-    </tbody>
-  </table>
-
+  </div>
 </div>
 {% endblock %}

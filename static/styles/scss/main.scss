@@ -42,6 +42,11 @@ $title-font: $nav-font;
 
 body {
     font-family: sans-serif;
+    background-color: rgb(252, 252, 252);
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -50,6 +55,10 @@ a {
 
 header {
     background-color: white;
+}
+
+#content {
+    padding-top: 62px;
 }
 
 .navbar-light {
@@ -103,10 +112,18 @@ nav {
     }
 }
 
-#footer {
+.title {
+    font-family: $nav-font;
+    color: $calo-accent;
+}
+
+
+footer {
     background-color: $calo-accent;
     color: white;
     border-top: rgb(0, 133, 143) solid 1px;
+
+    margin-top: auto;
 
     a {
         color: $announcement-link-color;

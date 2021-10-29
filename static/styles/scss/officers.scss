@@ -1,14 +1,8 @@
 @import 'main';
 
-.title {
-    font-family: $nav-font;
-    color: $calo-accent;
-}
-
 #officer-table {
-    .title {
-        // text-align: center;
-    }
-    td {
+
+    @media (min-width: 768px) {
+        min-width: 700px;
     }
 }
