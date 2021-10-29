@@ -1,0 +1,40 @@
+@import 'main';
+
+a {
+    text-decoration: none;
+}
+
+.card {
+    transition: ease .25s;
+    width: 400px;
+    min-height: 400px;
+
+    &:hover {
+        img {
+            filter: brightness(93%);
+        }
+        background-color: rgb(240, 240, 240);
+    }
+
+
+    img {
+        transition: ease .25s;
+        vertical-align: center;
+        min-height: 330px;
+        min-width: 100%;
+        overflow: hidden;
+        object-fit:cover;
+    }
+
+    h2 {
+        font-family: $nav-font;
+        color: $calo-accent;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .card {
+        width: 85vw;
+    }
+}

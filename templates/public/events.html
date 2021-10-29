@@ -4,54 +4,43 @@
 
 {% block content %}
 
+<!-- Libraries/Styling -->
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/events.css') }}">
+
 <div class="d-flex flex-column container mt-4">
   <h1 class="ms-auto me-auto title">Events</h1>
 
-    <div><div><div>
-        <table>
-            <tbody>
-                <tr>
-                    <td>
+    <div class="d-flex flex-row flex-wrap ms-auto me-auto mb-4 justify-content-around" id="events-container">
 
-                        <h2><a href="2016-2017">2016-2017</a></h2>
-                            <div><div>
-                            <a href='2016-2017'>
-                                <img src="{{url_for('static', filename='uploads/2016-2017/11-13-16_EBOC_banner.jpg')}}"  alt="Picture"/>
-                            </a>
-                            <div></div>
-                        </div></div>
+        <a href='2016-2017'>
+            <div class="event card shadow m-3">
+                <img src="{{url_for('static', filename='uploads/2016-2017/11-13-16_EBOC_banner.jpg')}}"  alt="Picture" class="card-img-top"/>
+                <div class="card-body">
+                    <h2>2016-2017</h2>
+                </div>
+            </div>
+        </a>
 
-                    </td>
+        <a href='2011-2012'>
+            <div class="event card shadow m-3">
+                <img src="{{url_for('static', filename='uploads/9708308_orig.jpg')}}"  alt="Picture" class="card-img-top"/>
+                <div class="card-body">
+                    <h2>2011-2012</h2>
+                </div>
+            </div>
+        </a>
 
-                    <td>
 
-                        <h2><a href="2011-2012">2011-2012</a></h2>
+        <a href='2010-2011'>
+            <div class="event card shadow m-3">
+                <img src="{{url_for('static', filename='uploads/1242188_orig.jpg')}}"  alt="Picture" class="card-img-top"/>
+                <div class="card-body">
+                    <h2>2010-2011</h2>
+                </div>
+            </div>
+        </a>
 
-                        <div><div>
-                            <a href='2011-2012'>
-                                <img src="{{url_for('static', filename='uploads/9708308_orig.jpg')}}"  alt="Picture"/>
-                            </a>
-                            <div></div>
-                        </div></div>
-
-                    </td>
-                    <td>
-
-                        <h2><a href="2010---2011">2010-2011</a></h2>
-
-                        <div><div>
-                            <a href='2010---2011'>
-                                <img src="{{url_for('static', filename='uploads/1242188_orig.jpg')}}"  alt="Picture"/>
-                            </a>
-                            <div></div>
-                        </div></div>
-
-                    </td>
-
-                </tr>
-            </tbody>
-        </table>
-    </div></div></div>
+    </div>
 </div>
 
 {% endblock %}
