@@ -1,0 +1,20 @@
+title: 2016-2017
+image-folder: events-2016-2017
+header-img: eboc-2016/11-13-16_EBOC_banner.jpg
+link: 2016-2017
+
+---
+
+title: 2011-2012
+image-folder: events-2011-2012
+header-img: header.jpg
+link: 2011-2012
+
+---
+
+title: 2010-2011
+image-folder: events-2010-2011
+header-img: header.jpg
+link: 2010-2011
+
+===

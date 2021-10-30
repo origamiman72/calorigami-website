@@ -1,0 +1,64 @@
+title: Events 2010-2011
+image-folder: events-2010-2011
+
+---
+
+subheading: Cake Box!
+description: Designed by Makoto Yamaguchi
+subfolder: cake-box
+
+---
+
+subheading: Oakland Zoo Trip & Origami Challenge
+description: Origami-Scavenger hunt challenge where we find animals, fold that animal, and take a picture with it.  The more animals, the more people you teach in your group, the more points you get!  Also, bonus points if you teach other people (outside of the club) to fold!  Winner is...Group Tammy, Holly, Tomomi and Nick!  Congratulations! 
+subfolder: zoo-trip
+
+---
+
+subheading: Heart Inspiration!
+description: We folded 100 Origami Hearts and put inspirational notes on them and then gave them all away to students walking on Sproul.
+subfolder: heart-inspiration
+
+---
+
+subheading: Gigantic Modular (Kusudama)
+subfolder: gigantic-modular
+
+---
+
+subheading: Berkeley Cherry Blossom Festival
+subfolder: cherry-blossom-festival
+
+---
+
+subheading: Cultural Immersion Night
+subfolder: cultural-immersion-night
+
+---
+
+subheading: Wet Folding Koi
+description: Introductory workshop on wet folding 
+subfolder: wet-folding
+
+---
+
+subheading: Cal Origami Halloween Party & "Between the Folds" showing
+subfolder: halloween-party
+
+---
+
+subheading: Random Trip to Japantown
+subfolder: japantown
+
+---
+
+subheading: 1000 Cranes Project
+description: For Oakland Children's Hospital
+subfolder: 1000-cranes
+
+---
+
+subheading: Paper Airplane Contest and Picnic
+subfolder: paper-airplane
+
+===

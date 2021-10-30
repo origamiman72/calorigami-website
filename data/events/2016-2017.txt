@@ -1,0 +1,14 @@
+title: Events 2016-2017
+image-folder: events-2016-2017
+
+---
+
+subheading: East Bay Origami Convention 2016
+subfolder: eboc-2016
+
+---
+
+subheading: Giant Chess Set
+subfolder: giant-chess-set
+
+===

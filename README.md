@@ -15,6 +15,11 @@ You must have installed:
 * Flask
 * git
 
+To install, run
+```bash
+pip3 install flask --user
+```
+
 First, you must clone the repository:
 ```bash
 git clone https://github.com/origamiman72/calorigami-website.git
@@ -23,7 +28,7 @@ To run the website server, run
 ```bash
 python3 server.py
 ```
-and navigate to `http://localhost:5000` in your browser to view the site.
+and navigate to `http://127.0.0.1:5000` in your browser to view the site.
 
 To update the website, navigate to the relevant folder in `/data/` and update
 using this format:
@@ -96,9 +101,9 @@ description: Today we folded paper!
 ```
 
 
-To add images to a post or announcement, create a folder under `/static/img` and place your images within it. Then, place the folder name under the key `image-folder`.
+To add images to a post or announcement, create a folder under `/static/img/posts` and place your images within it. Then, place the folder name under the key `image-folder`.
 
-e.g. for `/static/img/meeting-1-1-01/<images>`, `/data/posts/posts.txt` should look like
+e.g. for `/static/img/posts/meeting-1-1-01/<images>`, `/data/posts/posts.txt` should look like
 
 ```
 ---

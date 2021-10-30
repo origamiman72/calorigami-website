@@ -98,6 +98,11 @@ nav .nav-item.active:hover .nav-link {
   color: white;
 }
 
+.title {
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  color: #409d8d;
+}
+
 footer {
   background-color: #409d8d;
   color: white;

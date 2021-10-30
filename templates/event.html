@@ -1,0 +1,37 @@
+
+{% extends "layout.html" %}
+
+{% block title %}{{ event_title }}{% endblock %}
+
+{% block content %}
+
+<!-- Libraries/Styling -->
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/event.css') }}">
+<script src="{{ url_for('static',filename='lib/masonry/masonry.pkgd.min.js') }}"></script>
+<script src="{{ url_for('static',filename='lib/masonry/imagesLoaded.pkgd.min.js') }}"></script>
+
+<div class="d-flex flex-column container-fluid mt-4">
+  <h1 class="ms-auto me-auto title">{{ event_title }}</h1>
+
+    {% for event in event_list %}
+      {% if event.html %}
+        {% include event.html %}
+      {% else %}
+      <div class="pb-4 pt-2 subgroup">
+        <h2 class="text-center">{{ event.subheading }}</h2>
+        <div class="text-center">{{ event.description }}</div>
+          <div class="grid">
+            {% for img in event.images %}
+              <div class="grid-item">
+                <a href="{{ url_for('static', filename=img) }}">
+                  <img src="{{ url_for('static', filename=img) }}" class="m-2 d-block w-100 shadow mb-3 p-1 card">
+                </a>
+              </div>
+            {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}
