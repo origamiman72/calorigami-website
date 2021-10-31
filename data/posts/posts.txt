@@ -1,6 +1,6 @@
 title: <i class="fas fa-calendar-day"></i> &nbsp; Meetings
 type: announcement
-description: Our next meeting will be on <br /> <strong>Tuesday, November 1st</strong>, from <br /><strong>7-9pm</strong> on the <br /><strong>1st floor of Moffitt</strong>! <br /> You can sign up for our <a href="https://tinyurl.com/calo-email-list">mailing list</a> or join our <a href="https://discord.gg/BgCBU7vY">Discord</a> to get up to date information on our meetings!
+description: Our next meeting will be on <br /> <strong>Tuesday, November 1st</strong>, from <br /><strong>7-9pm</strong> on the <br /><strong>1st floor of Moffitt</strong>! <br /> You can sign up for our <a href="https://tinyurl.com/calo-email-list">mailing list</a> or join our <a href="https://discord.gg/wQkuYuQH3n">Discord</a> to get up to date information on our meetings!
 id: meeting-card
 
 ---

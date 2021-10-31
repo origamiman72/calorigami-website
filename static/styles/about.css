@@ -52,16 +52,24 @@ header {
   padding-top: 62px;
 }
 
-.navbar-light .navbar-brand a {
+.navbar-light a {
+  text-decoration: none;
+}
+
+.navbar-light .navbar-brand {
   color: #409d8d;
   font-family: "YanoneKaffeesatz-VariableFont_wght";
-  padding-top: 12px;
   font-size: 24px;
   text-decoration: none;
 }
 
+.navbar-light .navbar-brand:hover {
+  color: #409d8d;
+}
+
 nav {
   width: 100vw;
+  height: 62px;
 }
 
 nav .container-fluid {
@@ -72,6 +80,14 @@ nav .container-fluid {
 
 nav .container-fluid .navbar-collapse {
   flex-grow: 0;
+}
+
+@media (max-width: 992px) {
+  nav #navbar-home-brand {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 nav #navbar-logo {
@@ -114,42 +130,15 @@ footer a {
   color: #ffcc9d;
 }
 
-a {
-  text-decoration: none;
+#left-pic {
+  max-height: 400px;
 }
 
-.card {
-  transition: ease .25s;
-  width: 400px;
-  min-height: 400px;
-}
-
-.card:hover {
-  background-color: #f0f0f0;
-}
-
-.card:hover img {
-  filter: brightness(93%);
-}
-
-.card img {
-  transition: ease .25s;
-  vertical-align: center;
-  height: 330px;
+.about-text {
   min-width: 100%;
-  overflow: hidden;
-  object-fit: cover;
 }
 
-.card h2 {
-  font-family: "YanoneKaffeesatz-VariableFont_wght";
-  color: #409d8d;
-  text-decoration: none;
+#banner-pic {
+  max-width: 80%;
 }
-
-@media (max-width: 575.98px) {
-  .card {
-    width: 85vw;
-  }
-}
-/*# sourceMappingURL=events.css.map */
+/*# sourceMappingURL=about.css.map */

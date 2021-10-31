@@ -5,28 +5,31 @@
 {% block content %}
 
 <!-- Libraries/Styling -->
-<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/events.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/events.css') }}">
 
-<div class="d-flex flex-column container mt-4">
-  <h1 class="ms-auto me-auto title">Events</h1>
+<div class="container">
+    <div class="d-flex flex-column mt-4">
+        <h1 class="ms-auto me-auto title">Events</h1>
 
-    <div class="d-flex flex-row flex-wrap ms-auto me-auto mb-4 justify-content-around" id="events-container">
+        <div class="d-flex flex-row flex-wrap ms-auto me-auto mb-4 justify-content-around" id="events-container">
 
-        {% for event in event_list %}
+            {% for event in event_list %}
             {% if event.html %}
-                {% include event.html %}
+            {% include event.html %}
             {% else %}
             <a href="{{ 'events/' ~ event.link }}">
                 <div class="event card shadow m-3">
-                    <img src="{{ url_for('static', filename=event['header-img']) }}" alt="Picture" class="card-img-top"/>
+                    <img src="{{ url_for('static', filename=event['header-img']) }}" alt="Picture"
+                        class="card-img-top" />
                     <div class="card-body">
                         <h2>{{ event.title }}</h2>
                     </div>
                 </div>
             </a>
             {% endif %}
-        {% endfor %}
+            {% endfor %}
 
+        </div>
     </div>
 </div>
 

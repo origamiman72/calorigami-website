@@ -52,16 +52,24 @@ header {
   padding-top: 62px;
 }
 
-.navbar-light .navbar-brand a {
+.navbar-light a {
+  text-decoration: none;
+}
+
+.navbar-light .navbar-brand {
   color: #409d8d;
   font-family: "YanoneKaffeesatz-VariableFont_wght";
-  padding-top: 12px;
   font-size: 24px;
   text-decoration: none;
 }
 
+.navbar-light .navbar-brand:hover {
+  color: #409d8d;
+}
+
 nav {
   width: 100vw;
+  height: 62px;
 }
 
 nav .container-fluid {
@@ -72,6 +80,14 @@ nav .container-fluid {
 
 nav .container-fluid .navbar-collapse {
   flex-grow: 0;
+}
+
+@media (max-width: 992px) {
+  nav #navbar-home-brand {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 nav #navbar-logo {

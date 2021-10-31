@@ -114,8 +114,14 @@ footer a {
   color: #ffcc9d;
 }
 
+a {
+  color: #409d8d;
+  text-decoration: none;
+}
+
 .subgroup h2 {
   font-family: "YanoneKaffeesatz-VariableFont_wght";
+  color: #409d8d;
   font-size: 30px;
 }
 
@@ -128,5 +134,13 @@ footer a {
 .subgroup .grid .grid-item {
   align-self: center;
   width: 310px;
+}
+
+.subgroup .grid .grid-item img {
+  vertical-align: center;
+  max-height: 330px;
+  min-width: 100%;
+  overflow: hidden;
+  object-fit: cover;
 }
 /*# sourceMappingURL=event.css.map */

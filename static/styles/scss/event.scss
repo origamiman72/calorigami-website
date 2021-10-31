@@ -1,9 +1,15 @@
 @import 'main';
 
+a {
+    color: $calo-accent;
+    text-decoration: none;
+}
+
 .subgroup {
     
     h2 {
         font-family: $nav-font;
+        color: $calo-accent;
         font-size: 30px;
     }
 
@@ -15,6 +21,14 @@
         .grid-item {
             align-self: center;
             width: 310px;
+
+            img {
+                vertical-align: center;
+                max-height: 330px;
+                min-width: 100%;
+                overflow: hidden;
+                object-fit:cover;
+            }
         }
     }
 

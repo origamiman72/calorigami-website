@@ -9,6 +9,7 @@ subfolder: eboc-2016
 ---
 
 subheading: Giant Chess Set
+description: For Cal Day 2016, Cal Origami created a massive, complete chess set!
 subfolder: giant-chess-set
 
 ===

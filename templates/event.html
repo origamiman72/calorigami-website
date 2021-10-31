@@ -19,7 +19,7 @@
       {% else %}
       <div class="pb-4 pt-2 subgroup">
         <h2 class="text-center">{{ event.subheading }}</h2>
-        <div class="text-center">{{ event.description }}</div>
+        <div class="text-center">{{ event.description|safe }}</div>
           <div class="grid">
             {% for img in event.images %}
               <div class="grid-item">

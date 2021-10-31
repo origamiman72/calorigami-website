@@ -1,0 +1,13 @@
+@import 'main';
+
+a {
+    color: $calo-accent;
+    transition: .25s ease;
+    text-decoration: none;
+}
+
+#icon-row {
+    i {
+        font-size: 24px;
+    }
+}

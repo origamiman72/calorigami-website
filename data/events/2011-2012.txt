@@ -19,7 +19,7 @@ subfolder: bernie-peyton-workshop
 ---
 
 subheading: Giant T-Rex Model
-description: 10 hours of folding and 21 sheets of 5ftx5ft paper for an 11ft tall t-rex (Issei Yoshino).
+description: 10 hours of folding and 21 sheets of 5ftx5ft paper for an 11ft tall t-rex (Issei Yoshino)... with a top hat!.
 subfolder: t-rex
 
 ===

@@ -1,19 +1,21 @@
 <!doctype html>
 <html>
+
 <head>
-    <title>{% block title %}{% endblock %} - Cal Origami</title>
-    <meta property="og:image" content="{{ url_for('static', filename='/uploads/header_images/1318203853.png') }}" />
-    <meta name='og:description' content='The origami club at UC Berkeley.'/>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <title>{% block title %}{% endblock %} - Cal Origami</title>
+  <meta property="og:image" content="{{ url_for('static', filename='/uploads/header_images/1318203853.png') }}" />
+  <meta name='og:description' content='The origami club at UC Berkeley.' />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
-    <!-- Bootstrap -->
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='lib/bootstrap/css/bootstrap.min.css') }}">
-    <script src="{{ url_for('static',filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='lib/bootstrap/css/bootstrap.min.css') }}">
+  <script src="{{ url_for('static',filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/main.css') }}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+    integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
 </head>
 
 <body>
@@ -25,7 +27,7 @@
 
 
       <div id="content">
-          {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
       </div>
 
 
@@ -34,16 +36,19 @@
 
 
   <footer>
-    <div class="container hstack pt-3 pb-3">
-      <div class="mx-3" id="footertext">
-        Check us out on <a href='https://www.facebook.com/groups/calorigami/'>Facebook</a>!
-        <br/> We are a student group acting independently of the University of California. We take full responsibility for our organization and this web site.
-      </div>
-      <div id="ocf">
-        <a href="https://www.ocf.berkeley.edu">
-          <img src="https://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg"
-              alt="Hosted by the OCF" style="border: 0;" />
-        </a>
+    <div class="container">
+      <div class="flex-row flex-wrap d-flex justify-content-between ps-3 pe-3 pt-2 pb-2">
+        <div class="m-3 col-sm-8" id="footertext">
+          Check us out on <a href='https://www.facebook.com/groups/calorigami/'>Facebook</a>!
+          <br /> We are a student group acting independently of the University of California. We take full
+          responsibility for our organization and this web site.
+        </div>
+        <div class="m-3" id="ocf">
+          <a href="https://www.ocf.berkeley.edu">
+            <img src="https://www.ocf.berkeley.edu/hosting-logos/ocf-hosted-penguin-dark.svg" alt="Hosted by the OCF"
+              style="border: 0;" />
+          </a>
+        </div>
       </div>
     </div>
   </footer>
