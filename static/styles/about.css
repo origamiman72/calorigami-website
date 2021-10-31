@@ -69,7 +69,7 @@ header {
 
 nav {
   width: 100vw;
-  height: 62px;
+  min-height: 62px;
 }
 
 nav .container-fluid {
@@ -79,6 +79,7 @@ nav .container-fluid {
 }
 
 nav .container-fluid .navbar-collapse {
+  padding-top: 15px;
   flex-grow: 0;
 }
 
@@ -143,7 +144,7 @@ footer a {
 }
 
 @media (max-width: 575.98px) {
-  .card {
+  #background-card {
     padding: .5rem !important;
   }
 }
