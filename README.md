@@ -10,6 +10,8 @@ should be placed in `/data/` and will be automatically updated on the website.
 
 - `templates/public/officers.html`
 - `templates/public/index.html`
+- `templates/public/events.html`
+- `templates/event.html`
 
 ## Quick Start Guide
 
