@@ -87,12 +87,15 @@ nav {
         justify-content: space-between;
 
         .navbar-collapse {
-            padding-top: 15px;
             flex-grow: 0;
         }
     }
 
     @media (max-width: 992px) {
+
+        .navbar-collapse {
+            padding-top: 15px;
+        }
         #navbar-home-brand {
             position: fixed;
             left: 50%;

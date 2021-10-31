@@ -79,11 +79,13 @@ nav .container-fluid {
 }
 
 nav .container-fluid .navbar-collapse {
-  padding-top: 15px;
   flex-grow: 0;
 }
 
 @media (max-width: 992px) {
+  nav .navbar-collapse {
+    padding-top: 15px;
+  }
   nav #navbar-home-brand {
     position: fixed;
     left: 50%;
