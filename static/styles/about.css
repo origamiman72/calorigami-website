@@ -139,6 +139,12 @@ footer a {
 }
 
 #banner-pic {
-  max-width: 80%;
+  max-width: 100%;
+}
+
+@media (max-width: 575.98px) {
+  .card {
+    padding: .5rem !important;
+  }
 }
 /*# sourceMappingURL=about.css.map */

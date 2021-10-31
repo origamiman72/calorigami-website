@@ -79,7 +79,7 @@ header {
 
 nav {
     width: 100vw;
-    height: 62px;
+    min-height: 62px;
 
     .container-fluid {
         display: flex;
@@ -87,6 +87,7 @@ nav {
         justify-content: space-between;
 
         .navbar-collapse {
+            padding-top: 15px;
             flex-grow: 0;
         }
     }

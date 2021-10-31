@@ -69,7 +69,7 @@ header {
 
 nav {
   width: 100vw;
-  height: 62px;
+  min-height: 62px;
 }
 
 nav .container-fluid {
@@ -79,6 +79,7 @@ nav .container-fluid {
 }
 
 nav .container-fluid .navbar-collapse {
+  padding-top: 15px;
   flex-grow: 0;
 }
 
