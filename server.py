@@ -24,7 +24,7 @@ def events_page():
 @app.route('/events/<target>')
 @app.route('/events/<target>.html')
 def event_page(target):
-    metadata, subgroups = process_event(read_data(f"./data/events/{target}.txt"))
+    metadata, subgroups = process_event(read_data("./data/events/" + target + ".txt"))
     return render_template('event.html', event_title = metadata['title'], event_list = subgroups)
 
 @app.route('/<target>')
@@ -48,11 +48,11 @@ def read_data(filepath):
 def process_images(data, base_folder):
     for item in data:
         if 'image-folder' in item:
-            item['images'] = [f'img/{base_folder}/' + item['image-folder'] + '/' + img for img in sorted(os.listdir(f'./static/img/{base_folder}/' + item['image-folder'])) if img != '.DS_Store']
+            item['images'] = ['img/' + base_folder + '/' + item['image-folder'] + '/' + img for img in sorted(os.listdir('./static/img/' + base_folder + '/' + item['image-folder'])) if img != '.DS_Store']
         if 'header-img' in item:
-            item['header-img'] = f'img/{base_folder}/' + item['image-folder'] + '/' + item['header-img']
+            item['header-img'] = 'img/'+ base_folder + '/' + item['image-folder'] + '/' + item['header-img']
         if 'subfolder' in item:
-            item['images'] = [f'img/{base_folder}/' + item['subfolder'] + '/' + img for img in sorted(os.listdir(f'./static/img/{base_folder}/' + item['subfolder'])) if img != '.DS_Store']
+            item['images'] = ['img/' + base_folder + '/' + item['subfolder'] + '/' + img for img in sorted(os.listdir('./static/img/' + base_folder + '/' + item['subfolder'])) if img != '.DS_Store']
     return data
 
 def process_event(data):
