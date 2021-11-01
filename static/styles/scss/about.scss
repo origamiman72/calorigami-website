@@ -1,0 +1,19 @@
+@import 'main';
+
+#left-pic {
+    max-height: 400px;
+}
+
+.about-text {
+    min-width: 100%;
+}
+
+#banner-pic {
+    max-width: 100%;
+}
+
+@media (max-width: 575.98px) {
+    #background-card {
+        padding: .5rem !important;
+    }
+}

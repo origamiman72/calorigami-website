@@ -1,0 +1,25 @@
+title: Events 2011-2012
+image-folder: events-2011-2012
+
+---
+
+subheading: Ocean Beach
+subfolder: ocean-beach
+
+---
+
+subheading: Fisherman's Wharf Scavenger Hunt
+subfolder: fishermans-wharf
+
+---
+
+subheading: Bernie Peyton's Workshop
+subfolder: bernie-peyton-workshop
+
+---
+
+subheading: Giant T-Rex Model
+description: 10 hours of folding and 21 sheets of 5ftx5ft paper for an 11ft tall t-rex (Issei Yoshino)... with a top hat!.
+subfolder: t-rex
+
+===

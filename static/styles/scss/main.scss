@@ -1,0 +1,148 @@
+/* Colors */
+$calo-accent: #409d8d;
+$navbar-light-active-color: white;
+$banner-title-color: white;
+$body-background-color: white;
+$meeting-accent-color: rgb(255, 225, 180);
+$announcement-link-color: rgb(255, 204, 157);
+
+/* Fonts */
+@font-face {
+    font-family: 'YanoneKaffeesatz-VariableFont_wght';
+    src: url('fonts/YanoneKaffeesatz-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Spartan-VariableFont_wght';
+    src: url('fonts/Spartan-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Sarabun';
+    src: url('fonts/Sarabun-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Rambla';
+    src: url('fonts/Rambla-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+$nav-font: 'YanoneKaffeesatz-VariableFont_wght';
+$spartan-font: 'Spartan-VariableFont_wght';
+$title-font: $nav-font;
+
+body {
+    font-family: sans-serif;
+    background-color: rgb(252, 252, 252);
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: $nav-font;
+}
+
+header {
+    background-color: white;
+}
+
+#content {
+    padding-top: 62px;
+}
+
+.navbar-light {
+    a {
+        text-decoration: none;
+    }
+    .navbar-brand {
+        color: $calo-accent;
+        font-family: $nav-font;
+        font-size: 24px;
+        text-decoration: none;
+
+        &:hover {
+            color: $calo-accent;
+        }
+    }
+}
+
+nav {
+    width: 100vw;
+    min-height: 62px;
+
+    .container-fluid {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+
+        .navbar-collapse {
+            flex-grow: 0;
+        }
+    }
+
+    @media (max-width: 992px) {
+
+        .navbar-collapse {
+            padding-top: 15px;
+        }
+        #navbar-home-brand {
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    #navbar-logo {
+        height: 40px;
+    }
+
+    .nav-item {
+        border-radius: 5px;
+        margin: 0 3px;
+        font-family: $nav-font;
+        font-size: 20px;
+        text-align: center;
+
+        &.active {
+            background-color: $calo-accent;
+            .nav-link {
+                color: $navbar-light-active-color;
+            }
+
+            &:hover {
+                .nav-link {
+                    color: $navbar-light-active-color;
+                }
+            }
+        }
+    }
+}
+
+.title {
+    font-family: $nav-font;
+    color: $calo-accent;
+}
+
+
+footer {
+    background-color: $calo-accent;
+    color: white;
+    border-top: rgb(0, 133, 143) solid 1px;
+
+    margin-top: auto;
+
+    a {
+        color: $announcement-link-color;
+    }
+}

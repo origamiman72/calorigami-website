@@ -1,0 +1,122 @@
+/* Colors */
+/* Fonts */
+@font-face {
+  font-family: 'YanoneKaffeesatz-VariableFont_wght';
+  src: url("fonts/YanoneKaffeesatz-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Spartan-VariableFont_wght';
+  src: url("fonts/Spartan-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sarabun';
+  src: url("fonts/Sarabun-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rambla';
+  src: url("fonts/Rambla-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #fcfcfc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: "YanoneKaffeesatz-VariableFont_wght";
+}
+
+header {
+  background-color: white;
+}
+
+#content {
+  padding-top: 62px;
+}
+
+.navbar-light .navbar-brand a {
+  color: #409d8d;
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  padding-top: 12px;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+nav {
+  width: 100vw;
+}
+
+nav .container-fluid {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+nav .container-fluid .navbar-collapse {
+  flex-grow: 0;
+}
+
+nav #navbar-logo {
+  height: 40px;
+}
+
+nav .nav-item {
+  border-radius: 5px;
+  margin: 0 3px;
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  font-size: 20px;
+  text-align: center;
+}
+
+nav .nav-item.active {
+  background-color: #409d8d;
+}
+
+nav .nav-item.active .nav-link {
+  color: white;
+}
+
+nav .nav-item.active:hover .nav-link {
+  color: white;
+}
+
+.title {
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  color: #409d8d;
+}
+
+footer {
+  background-color: #409d8d;
+  color: white;
+  border-top: #00858f solid 1px;
+  margin-top: auto;
+}
+
+footer a {
+  color: #ffcc9d;
+}
+
+@media (min-width: 768px) {
+  #officer-table {
+    min-width: 700px;
+  }
+}
+/*# sourceMappingURL=officers.css.map */

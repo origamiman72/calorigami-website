@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- Libraries/Styling -->
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/index.css') }}">
+<script src="{{ url_for('static',filename='lib/vanta/three.min.js') }}"></script>
+<script src="{{ url_for('static',filename='lib/vanta/vanta.birds.min.js') }}"></script>
+<script src="{{ url_for('static',filename='lib/masonry/masonry.pkgd.min.js') }}"></script>
+
+<!-- Banner -->
+<div class="banner">
+    <div id="banner-background">
+        <div id="banner-title">CAL Origami</div>
+    </div>
+</div>
+
+<div class="shadow-sm container-fluid body-bg">
+    <div class="pt-4">
+
+        <!-- Start Masonry -->
+        <div class="grid" id="masonry">
+
+            {% for post in post_list %}
+                {% if post.html %}
+                    {% include post.html %}
+                {% else %}
+
+                    <div class="grid-item card shadow mb-4 {{ post.type }}" id="{{ post.id }}">
+
+                        {% if post['image-folder'] %}
+                            <!-- Image Carousel -->
+                            <div id="{{ 'carousel-' ~ loop.index0 }}" class="carousel slide card-img-top" data-bs-ride="carousel" data-bs-interval="false">
+                                <div class="carousel-inner">
+                                {% for img in post.images %}
+                                    <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
+                                        <img src="{{ url_for('static', filename=img) }}" class="d-block w-100" alt="Picture">
+                                    </div>
+                                {% endfor %}
+                                </div>
+
+                                <!-- Carousel Controls -->
+                                {% if post.images|length > 1 %}
+                                    <button class="carousel-control-prev" type="button" data-bs-target="{{ '#carousel-' ~ loop.index0 }}" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="{{ '#carousel-' ~ loop.index0 }}" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
+                        <!-- Post Description -->
+                        <div class="card-body">
+                            <div class="card-title">{{ post.title|safe }}</div>
+                            <div class="card-text">{{ post.description|safe }}</div>
+                        </div>
+                    </div>
+
+                {% endif %}
+            {% endfor %}
+            </div>
+            <!-- End Masonry -->
+        </div>
+    </div>
+
+    <script>
+        // Banner background
+        VANTA.BIRDS({
+            el: "#banner-background",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 350.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+        //   color1: 0x2771b3,
+        //   color2: 0xd9b956,
+        color1: 0x78909b,
+        color2: 0xcab383,
+            colorMode: "lerp",
+            birdSize: 5.0,
+            wingSpan: 20.00,
+            speedLimit: 7,
+            separation: 100.00,
+            alignment: 15.00,
+            cohesion: 1.00,
+            quantity: 3.0,
+            backgroundAlpha: 0
+        })
+
+        // Posts Masonry
+        var msnry = new Masonry( '.grid', {
+            // options
+            itemSelector: '.grid-item',
+            gutter: 15,
+            // columnWidth: 200,
+            fitWidth: true,
+        });
+    </script>
+
+    </div>
+</div>
+
+
+{% endblock %}

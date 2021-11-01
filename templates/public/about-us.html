@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+
+<!-- Libraries/Styling -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/about.css') }}">
+
+<div class="container">
+    <div class="d-flex flex-column mt-4">
+        <h1 class="ms-auto me-auto title">About Us</h1>
+
+        <div class="card shadow ms-auto me-auto mb-4 p-4" id="background-card">
+            <div class="hstack">
+
+                <div class="d-none d-xl-block m-3">
+                    <img src="{{ url_for('static', filename='img/events/events-2010-2011/1000-cranes/246122_orig.jpg') }}"
+                        class="border" alt="Picture" id="left-pic" />
+                </div>
+
+                <div class="m-3">
+                    <div class="about-text text-break">
+                        <p>
+                            Cal Origami was founded in the Spring of 2009 by President Christopher Itoh
+                            as he was teaching origami at a nearby middle school in Fresno, California.
+                            After witnessing the effectiveness of his work in inducing a calm mood for a
+                            usually hyperactive class, he worked with his peers to establish Cal Origami
+                            at U.C. Berkeley in order to continue helping other students with stress.
+                        </p>
+                        <p>
+                            Cal Origami is a novel organization that not only focuses on the aesthetic
+                            qualities of origami, but also uses origami to reach out to local
+                            communities and teach practical applications. Studies have shown that
+                            Origami can be used as a therapeutic device to lower stress levels and
+                            reduce Attention Deficit Hyperactivity Disorder (ADHD) and Bipolar disorder.
+                            In addition, the theories and technicality of origami can be an effective
+                            teaching method for abstract concepts in arithmetic and geometry.
+                        </p>
+                        <p>
+                            Within a year, Cal Origami had been recognized all over campus for its
+                            talent and dedication to spreading origami. We have participated in numerous
+                            events such as Cultural Immersion Night hosted by the International Students
+                            Association at Berkeley, Matsuri hosted by Nikkei Student Union, and Fall
+                            Affairs, hosted by the Berkeley Art Museum.
+                        </p>
+                    </div>
+
+                    <div class="d-flex">
+                        <img src="{{ url_for('static', filename='img/assets/origami_banner.jpg') }}" alt="Picture"
+                            class="border ms-auto me-auto" id="banner-pic" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

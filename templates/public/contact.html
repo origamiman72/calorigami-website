@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+{% macro contact_link(protocol, link, name) %}
+<div class="contact p-2 vstack">
+    <b>{{ name }}: </b>
+    <a href={{ protocol ~ link }}>{{ link }}</a>
+</div>
+{% endmacro %}
+
+<!-- Libraries/Styling -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/contacts.css') }}">
+
+<div class="container">
+    <div class="d-flex flex-column mt-4">
+        <h1 class="ms-auto me-auto title">Contact</h1>
+
+        <div class="card shadow ms-auto me-auto mb-4 p-4">
+            {{ contact_link("mailto:", "calorigami@gmail.com", "General")}}
+            {{ contact_link("mailto:", "calorigamidonate@gmail.com", "Donations")}}
+            {{ contact_link("https://", "facebook.com/calorigami", "Facebook")}}
+            {{ contact_link("https://", "facebook.com/groups/calorigami", "Facebook Group")}}
+            {{ contact_link("https://", "instagram.com/calorigami", "Instagram")}}
+            {{ contact_link("https://", "tinyurl.com/CALO-email-list", "Join our E-mail list")}}
+
+            <div class="d-flex flex-row justify-content-evenly mt-2 mb-2 p-2" id="icon-row">
+                <a href="mailto:calorigami@gmail.com" target="_blank" title="E-mail">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.facebook.com/groups/calorigami/" target="_blank" title="Facebook">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="https://www.instagram.com/calorigami/" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://discord.gg/wQkuYuQH3n" target="_blank" title="Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+
+            <div class="p-2">
+                Feel free to contact us with any questions you may have!
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}Officers{% endblock %}
+
+{% block content %}
+
+<!-- Libraries/Styling -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/officers.css') }}">
+
+<div class="container">
+  <div class="d-flex flex-column mt-4">
+    <h1 class="ms-auto me-auto title">Officers</h1>
+
+    <div class="card shadow ms-auto me-auto mb-4 p-3" id="officer-table">
+      {% for officer in officer_list %}
+      {% if loop.index % 2 == 1 %}
+      <div class="row">
+        {% endif %}
+        <!-- TODO: Maybe add images? -->
+        <div class="col-md-6 p-4">
+          <h2 class="title">{{ officer.name }}</h2>
+          <div class="text-nowrap"><b>Position:</b> {{ officer.position }}</div>
+          <div class="text-nowrap"><b>Year:</b> {{ officer.year }}</div>
+          <div class="text-nowrap"><b>Major:</b> {{ officer.major }}</div>
+          <div class="text-nowrap"><b>Other:</b> {{ officer.other }}</div>
+        </div>
+        {% if loop.index % 2 == 0 %}
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

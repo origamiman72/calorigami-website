@@ -1,0 +1,200 @@
+/* Colors */
+/* Fonts */
+@font-face {
+  font-family: 'YanoneKaffeesatz-VariableFont_wght';
+  src: url("fonts/YanoneKaffeesatz-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Spartan-VariableFont_wght';
+  src: url("fonts/Spartan-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sarabun';
+  src: url("fonts/Sarabun-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rambla';
+  src: url("fonts/Rambla-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #fcfcfc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: "YanoneKaffeesatz-VariableFont_wght";
+}
+
+header {
+  background-color: white;
+}
+
+#content {
+  padding-top: 62px;
+}
+
+.navbar-light .navbar-brand a {
+  color: #409d8d;
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  padding-top: 12px;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+nav {
+  width: 100vw;
+}
+
+nav .container-fluid {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+nav .container-fluid .navbar-collapse {
+  flex-grow: 0;
+}
+
+nav #navbar-logo {
+  height: 40px;
+}
+
+nav .nav-item {
+  border-radius: 5px;
+  margin: 0 3px;
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  font-size: 20px;
+  text-align: center;
+}
+
+nav .nav-item.active {
+  background-color: #409d8d;
+}
+
+nav .nav-item.active .nav-link {
+  color: white;
+}
+
+nav .nav-item.active:hover .nav-link {
+  color: white;
+}
+
+.title {
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  color: #409d8d;
+}
+
+footer {
+  background-color: #409d8d;
+  color: white;
+  border-top: #00858f solid 1px;
+  margin-top: auto;
+}
+
+footer a {
+  color: #ffcc9d;
+}
+
+.banner {
+  width: 100vw;
+  height: 350px;
+}
+
+.banner #banner-background {
+  height: 350px;
+  z-index: -1;
+  background-color: #409d8d;
+  background: radial-gradient(#629fa3, #409d8d);
+}
+
+.banner #banner-title {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 350px;
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  font-size: 70px;
+  color: white;
+  text-shadow: 2px 2px 8px #1749478a;
+}
+
+.body-bg {
+  background-color: white;
+}
+
+#masonry {
+  margin: auto;
+}
+
+.grid .gutter-sizer {
+  width: 5%;
+}
+
+.grid .card .card-title {
+  font-family: "YanoneKaffeesatz-VariableFont_wght";
+  font-size: 20px;
+}
+
+.grid .card .carousel-item {
+  height: 300px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.grid .card .carousel-item img {
+  vertical-align: center;
+  min-width: 100%;
+  min-height: 300px;
+  overflow: hidden;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.grid .announcement {
+  background-color: #409d8d;
+  color: white;
+}
+
+.grid .announcement .card-title {
+  font-size: 24px;
+}
+
+.grid .announcement a {
+  color: #ffcc9d;
+}
+
+.grid .card {
+  width: 400px;
+}
+
+@media (max-width: 575.98px) {
+  .grid .card {
+    width: 325px;
+  }
+}
+
+.grid #meeting-card strong {
+  color: #ffe1b4;
+}
+/*# sourceMappingURL=index.css.map */

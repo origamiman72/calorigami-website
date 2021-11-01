@@ -1,0 +1,96 @@
+@import 'main';
+
+$banner-height: 350px;
+
+.banner {
+    width: 100vw;
+    height: $banner-height;
+
+    #banner-background {
+        height: $banner-height;
+        z-index: -1;
+        background-color: $calo-accent;
+        background: radial-gradient(#629fa3, $calo-accent);
+    }
+
+    #banner-title {
+        text-align: center;
+        vertical-align: middle;
+        line-height: $banner-height; 
+        font-family: $title-font;
+        font-size: 70px;
+        color: $banner-title-color;
+        text-shadow: 2px 2px 8px #1749478a;
+    }
+}
+
+.body-bg {
+    background-color: $body-background-color;
+}
+
+#masonry {
+    margin: auto;
+}
+
+.grid {
+
+    .gutter-sizer {
+        width: 5%;
+    }
+
+    .card {
+        .card-title {
+            font-family: $nav-font;
+            font-size: 20px;
+        }
+
+        .carousel-item {
+            height: 300px;
+            overflow: hidden;
+            width: 100%;
+
+            img {
+                vertical-align: center;
+                min-width: 100%;
+                min-height: 300px;
+                overflow: hidden;
+                object-fit:cover;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    .announcement {
+        background-color: $calo-accent;
+        color: white;
+
+        .card-title {
+            font-size: 24px;
+        }
+
+        a {
+            color: $announcement-link-color;
+        }
+    }
+
+
+    .card {
+        width: 400px;
+    }
+
+    @media (max-width: 575.98px) {
+        .card {
+            width: 325px;
+        }
+    }
+
+    #meeting-card {
+
+        strong {
+            color: $meeting-accent-color;
+        }
+    }
+}

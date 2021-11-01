@@ -1,0 +1,33 @@
+{% macro nav_link(endpoint, name) %}
+{% if request.path == (endpoint) or request.path == (endpoint ~ ".html") or (endpoint == '/index' and request.path == '/') %}
+<li class="nav-item active"><a class="nav-link" aria-current="page" href="{{ endpoint }}">{{name}}</a></li>
+{% else %}
+<li class="nav-item"><a class="nav-link" href="{{ endpoint }}">{{name}}</a></li>
+{% endif %}
+{% endmacro %}
+
+<nav class="navbar navbar-expand-lg navbar-light" id="nav">
+    <div class="container-fluid">
+        <div class="hstack gap-2">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href="/" class="hstack gap-2" id="navbar-home-brand">
+                <img src="{{ url_for('static', filename='img/assets/CAL Origami Logo.png') }}" id="navbar-logo" />
+                <div class="navbar-brand">CAL Origami</div>
+            </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav">
+                {{ nav_link('/index', 'Home') }}
+                {{ nav_link('/events', 'Past Events') }}
+                {{ nav_link('/officers', 'Officers') }}
+                {{ nav_link('/contact', 'Contact') }}
+                {{ nav_link('/about-us', 'About Us') }}
+                <!-- {{ nav_link('/donate', 'Donate') }} -->
+            </ul>
+        </div>
+    </div>
+</nav>
